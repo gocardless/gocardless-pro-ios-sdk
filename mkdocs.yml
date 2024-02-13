@@ -1,0 +1,14 @@
+site_name: 'gocardless-pro-ios-sdk-docs'
+
+repo_url: 'https://github.com/gocardless/gocardless-pro-ios-sdk'
+
+edit_uri: edit/master/docs/
+
+plugins:
+  - techdocs-core
+  # Lets you specify part of the order of the nav tree and still have the rest
+  # be generated
+  - awesome-pages
+  # Fixes the "heading contains a link/image" problem, which is really annoying
+  # with (e.g.) CI status badges
+  - mkdocs-nav-enhancements

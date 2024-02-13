@@ -1,0 +1,29 @@
+---
+name: publish-techdocs
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - docs/**
+jobs:
+  publish_techdocs:
+    name: Publish Techdocs (${{matrix.n.}})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        n:
+          - env: staging
+            secret: TECHDOCS_GCS_SECRET_ACCESS_KEY_STAGING
+          - env: production
+            secret: TECHDOCS_GCS_SECRET_ACCESS_KEY_PRODUCTION
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish TechDocs - ${{ matrix.n.env }}
+        uses: gocardless/publish-techdocs-action@master
+        with:
+          publisher: googleGcs
+          credentials: ${{ secrets[matrix.n.secret] }}
+          bucket: gc-prd-tech-docs-${{ matrix.n.env }}
+          entity: default/component/gocardless-pro-ios-sdk
