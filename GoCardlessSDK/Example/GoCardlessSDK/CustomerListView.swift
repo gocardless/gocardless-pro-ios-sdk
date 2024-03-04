@@ -37,7 +37,7 @@ struct CustomerRow: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("\(customer.givenName) \(customer.familyName)")
+                    Text("\(customer.givenName ?? "") \(customer.familyName ?? "")")
                     Spacer()
                 }
                 

@@ -65,7 +65,7 @@ class MainViewModel: ObservableObject {
         
         let allCustomers = customerService.all()
         
-        customerService.delete(customerId: customer.id)
+        customerService.delete(customerId: customer.id ?? "")
             .receive(on: DispatchQueue.main)
             .flatMap({ remove in
                 allCustomers

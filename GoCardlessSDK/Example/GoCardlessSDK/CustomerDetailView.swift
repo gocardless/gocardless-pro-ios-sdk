@@ -21,7 +21,7 @@ struct CustomerDetailView: View {
             Text("Customer details")
             VStack(alignment: .leading) {
                 HStack {
-                    Text("\(customer.givenName) \(customer.familyName)")
+                    Text("\(customer.givenName ?? "") \(customer.familyName ?? "")")
                     Spacer()
                 }
                 

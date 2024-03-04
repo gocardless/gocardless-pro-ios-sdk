@@ -10,11 +10,13 @@ import Foundation
 enum Endpoint {
     case customerList
     case customerRemove(customerId: String)
+    case billingRequestCreate
     
     var path: String {
         switch self {
         case .customerList: return "/customers"
         case .customerRemove(let customerId): return "/customers/\(customerId)"
+        case .billingRequestCreate: return "/billing_requests"
         }
     }
     
@@ -22,6 +24,7 @@ enum Endpoint {
         switch self {
         case .customerList: return "GET"
         case .customerRemove: return "DELETE"
+        case .billingRequestCreate: return "POST"
         }
     }
 }
