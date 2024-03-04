@@ -11,7 +11,7 @@ import GoCardlessSDK
 
 @main
 class ExampleApp: App {
-    private let accessToken = "sandbox_ReyBZA9xcVZ-ktSxjfG0Duhzr7h-c9Pjt-UTi8RI"
+    private let accessToken = ""
     
     var body: some Scene {
         WindowGroup {
