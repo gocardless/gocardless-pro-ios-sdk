@@ -22,7 +22,7 @@ pod 'GoCardlessSDK'
 
 ## Author
 
-Gunhan Sancar, cgnhnc@gmail.com
+Gunhan Sancar
 
 ## License
 
