@@ -1,0 +1,1129 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A92CFCC232EEF71A946C4AA1CAD10D3 /* UIApplication+KeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC6E7632B98F850CD3B664837F9F997 /* UIApplication+KeyWindow.m */; };
+		152ECBEB0D626DF1DBF45D2248297DF7 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7487379E363C535A121E0B27344E301B /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B1A2BB1D3C8220B94435A466CEB975B /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A23EA881C02510B05858850AE6806D7 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29C8FB178CE64F7DD337A0E494F325C9 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = F07560080BFDF82EF5F2D370D2E62329 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		29FA15792A37A36CFE784F3B81FE8F44 /* Pods-GoCardlessSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA253FA372B12903A55B6D811404A679 /* Pods-GoCardlessSDK_Example-dummy.m */; };
+		2F87290CB899F4DC07FC7AD1A550F132 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = AC48E972FC6D39CBE744F0DB50C5FA4A /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3089ADF39E973B6E193AA7E43A601F64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		335B9A0A5E73F1E5363041BD22E5DE77 /* HttpHeaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9844D7B38E91D0D867175F06FACA /* HttpHeaderProvider.swift */; };
+		47F8C9B8F11AF1DC2DC0384B9476372B /* GoCardlessSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E18DD782091E241B810F175C6BEC5BAF /* GoCardlessSDK-dummy.m */; };
+		48950B419116C2744C7E96F063DA3CD6 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6F4FB62B41D6C5676EAEFF6328B27 /* Injectable.swift */; };
+		49D4F391E6F1C56A0DDFC2229A83AF5F /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8530F7A6A83395E077BE92465C105D98 /* UIImage+Diff.m */; };
+		4AB77C48BE021CCDD89D74116C6E7398 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37DEED90811C566A1159241C380D5D /* CustomerService.swift */; };
+		4B59F3D455600B829C43CF743C60A384 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629A72BD2DB5BB715D3EC41AE89D621 /* UIImage+Snapshot.m */; };
+		53D4A960291D7644E8ECA89B7DDFE4D5 /* iOSSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E842FB59C4DCA02A03388EB2505D3 /* iOSSnapshotTestCase-dummy.m */; };
+		5713C934E7156126919CA080DF014F62 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89304904657B9958A0BECB44BA2F472D /* Models.swift */; };
+		58864D444B4DE2B9E8DD13D9CA06D33A /* GoCardlessSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C120B0036E0ACE7F999A931B49AF5D9 /* GoCardlessSDK.swift */; };
+		63C8130B415695A7ACDAD1428140FC3E /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC45DBA821B1DD6DA22C35F9CEBFDD0 /* UIImage+Compare.m */; };
+		66B0A70C677802256948EFFE1A8D6017 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A7ACDE21702B3327739ACCC5FC7B71 /* FBSnapshotTestCasePlatform.m */; };
+		68E55754C33B56CA9DDA4BC889EE4604 /* Pods-GoCardlessSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8C9C47915DBE168F1E7E2EC3F2A839 /* Pods-GoCardlessSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68EB73BC69D32765911E06DB7B9C3411 /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 218EEC8C227BBE60423734530652FF5E /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		74A3D450EBF4DEB639B74C43E2B7432D /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79E60FA05900CDB023C8131898F5A8 /* FBSnapshotTestCase.m */; };
+		822C3867B1A9CD18C804496E45F6B25B /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238DA32AC8D1DFB3BAF494E2A7AE7B8 /* SwiftSupport.swift */; };
+		836C4E02D809AED74B26AB83DA93480E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22E936C5B1009263FE20C8786B0D17 /* APIError.swift */; };
+		882BF2357379EDE0A86D81B2348252CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		91110FBB242BE13004080D023B229C99 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3EBE582D5BC37114FCFF6CE041E2DC /* FBSnapshotTestController.m */; };
+		94D0024FE0F269830DCCD94135FBBC7E /* GoCardlessSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A5315261FA7B5B3AE8E9DF37BD56880 /* GoCardlessSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94D0F0D873B9A54EF3FB2AE74AEF123B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		A6FF528CA67C9CC12B126062DA7E6B8C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E658F388F01C72599CA75537950B6095 /* XCTest.framework */; };
+		B2F5CCD0AAD0C62B9E0968F6BF3DFDAF /* UIApplication+KeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 605C352B4A290154E398392D07849A23 /* UIApplication+KeyWindow.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C6598EF52B63639000FF7818 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6598EF42B63639000FF7818 /* Environment.swift */; };
+		C69120C82B62AA95000A2241 /* Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120C72B62AA95000A2241 /* Remove.swift */; };
+		CA03BD01E1CD988537EDB250FCD81CA9 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67339753D459CFB70A92AD901BCB84 /* DependencyContainer.swift */; };
+		CE65BFE9849CFC446A2D2726104F1C1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */; };
+		D6485CC7EEE48F9C51B8676AA276C43F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3280BB5E7B57C31D41117A74F76E9DF3 /* QuartzCore.framework */; };
+		D87A469B33F6B73085DFE17C1793089E /* Pods-GoCardlessSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A54D1784EFF79CFC93011EF3C266B4 /* Pods-GoCardlessSDK_Tests-dummy.m */; };
+		DA70AD852E043CDAD1DD640B4934D2A1 /* iOSSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2DBEBDB9DB28EBA4E88B735A1BA22C /* iOSSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDDEEACD1DEB02775E10155ECBFE8D69 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90418E221ECD0CEEFCBC86C5D9F48BC2 /* HttpClient.swift */; };
+		E97F8E7CB7486F65C6B312225B44BF89 /* Pods-GoCardlessSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E11E8EF2AC288CAC42448A0F0EED08D4 /* Pods-GoCardlessSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECDD765CEEF00EEFB82D30DAF6B930DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ADD6416C07EA82B86D898652757AC /* Endpoint.swift */; };
+		FDC95FF847527B8316F072BF1AAD8CF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		FEA64B15E8F4FA6A32863F33A09110D2 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = B4345D7CA9E107541D51126DECECCBBB /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16168ED0C64C0C49F4EF97F533FC4F70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC13BCC6C28AF9E9DB6E8B36EACA7145;
+			remoteInfo = GoCardlessSDK;
+		};
+		61E03C7982CA8D0AA69AFF3DD0D58EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C393038B0BEF088C1B93E6528005862D;
+			remoteInfo = iOSSnapshotTestCase;
+		};
+		7E546D1FB0A082B5ACC0EC2B71740B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C1092A230FDC9F88B4D7D2885FB4ACC;
+			remoteInfo = "Pods-GoCardlessSDK_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		129BD911F08DCC88A416A1C4BDC76834 /* Pods-GoCardlessSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoCardlessSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
+		1AC368C0F977EE5D644A6BD23363DC5B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1CEDB315205DA5896FF480A3F8AB1420 /* iOSSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
+		1D67339753D459CFB70A92AD901BCB84 /* DependencyContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		218EEC8C227BBE60423734530652FF5E /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
+		3280BB5E7B57C31D41117A74F76E9DF3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3544AD35A703626BF30F5ADFCD8A4B00 /* Pods-GoCardlessSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoCardlessSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		3B0B6AAEDDA099D0EC67CFC14D746091 /* iOSSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
+		3F37DEED90811C566A1159241C380D5D /* CustomerService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
+		42D7319B96A6CD585AFB71B8BAE0E8C1 /* iOSSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSSnapshotTestCase.modulemap; sourceTree = "<group>"; };
+		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5C2DBEBDB9DB28EBA4E88B735A1BA22C /* iOSSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
+		5F8C9C47915DBE168F1E7E2EC3F2A839 /* Pods-GoCardlessSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoCardlessSDK_Example-umbrella.h"; sourceTree = "<group>"; };
+		605C352B4A290154E398392D07849A23 /* UIApplication+KeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+KeyWindow.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIApplication+KeyWindow.h"; sourceTree = "<group>"; };
+		6A23EA881C02510B05858850AE6806D7 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = src/iOSSnapshotTestCaseCore/Public/FBSnapshotTestCase.h; sourceTree = "<group>"; };
+		6F87EB6196E9BB6DE59AB51E0E0DDD67 /* Pods-GoCardlessSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoCardlessSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7487379E363C535A121E0B27344E301B /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = src/iOSSnapshotTestCaseCore/Public/FBSnapshotTestController.h; sourceTree = "<group>"; };
+		7A5315261FA7B5B3AE8E9DF37BD56880 /* GoCardlessSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoCardlessSDK-umbrella.h"; sourceTree = "<group>"; };
+		7C44FD1ED2383C436E9421C97D105240 /* GoCardlessSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GoCardlessSDK-Info.plist"; sourceTree = "<group>"; };
+		803247687C1C5278C002CA6D5B5D1CA3 /* GoCardlessSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoCardlessSDK.modulemap; sourceTree = "<group>"; };
+		83F2C0ED748CFCA85C7A77B129E96566 /* GoCardlessSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoCardlessSDK; path = GoCardlessSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8530F7A6A83395E077BE92465C105D98 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
+		89304904657B9958A0BECB44BA2F472D /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8CF2CECE68179F77B763338921430855 /* Pods-GoCardlessSDK_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GoCardlessSDK_Tests"; path = Pods_GoCardlessSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E668B6B1DFCC376E197819A1EFE909E /* Pods-GoCardlessSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoCardlessSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8EC45DBA821B1DD6DA22C35F9CEBFDD0 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
+		90418E221ECD0CEEFCBC86C5D9F48BC2 /* HttpClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		94E6F4FB62B41D6C5676EAEFF6328B27 /* Injectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		9629A72BD2DB5BB715D3EC41AE89D621 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		9C120B0036E0ACE7F999A931B49AF5D9 /* GoCardlessSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoCardlessSDK.swift; path = GoCardlessSDK/Classes/GoCardlessSDK.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A27387A15FA2FB9E1F924ECFF7607DA0 /* GoCardlessSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoCardlessSDK-prefix.pch"; sourceTree = "<group>"; };
+		A4036F15BEB53EF75272A9763F2682E6 /* Pods-GoCardlessSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoCardlessSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		A570E9F886109DF3216431997D8B7E9A /* iOSSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
+		AC48E972FC6D39CBE744F0DB50C5FA4A /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
+		AD63AFC9739CD04C6BA8E87B7F5ACAD9 /* GoCardlessSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GoCardlessSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AFE3E1F7481FE790BE8A8537B5B276FE /* Pods-GoCardlessSDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoCardlessSDK_Example-Info.plist"; sourceTree = "<group>"; };
+		B16A960696DB72D4209D69AE298D9833 /* Pods-GoCardlessSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoCardlessSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B4345D7CA9E107541D51126DECECCBBB /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = src/iOSSnapshotTestCaseCore/Public/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
+		B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSSnapshotTestCase; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93A92007AE42D22412E7917AE379F2F /* GoCardlessSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoCardlessSDK.release.xcconfig; sourceTree = "<group>"; };
+		BDF5EABE32108B0322634998BC348053 /* Pods-GoCardlessSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoCardlessSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		C5B02045C98D646A2D6D9D016FBD3DB7 /* Pods-GoCardlessSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoCardlessSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C6598EF42B63639000FF7818 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C69120C72B62AA95000A2241 /* Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
+		C72C9844D7B38E91D0D867175F06FACA /* HttpHeaderProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpHeaderProvider.swift; sourceTree = "<group>"; };
+		C84ADD6416C07EA82B86D898652757AC /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CAB44CC0F57E2815CBD7937E47FBE1B8 /* iOSSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
+		D6A54D1784EFF79CFC93011EF3C266B4 /* Pods-GoCardlessSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoCardlessSDK_Tests-dummy.m"; sourceTree = "<group>"; };
+		D74DC6A8D8892C1C953E6A812F97895E /* Pods-GoCardlessSDK_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GoCardlessSDK_Example"; path = Pods_GoCardlessSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC6E2403D10AA25B7716D58BADBC983 /* Pods-GoCardlessSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoCardlessSDK_Example.modulemap"; sourceTree = "<group>"; };
+		DD2FC1A425D3F354F92BBCC553E71FD7 /* Pods-GoCardlessSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoCardlessSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DED641853680D18DD951185742BA211C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E11E8EF2AC288CAC42448A0F0EED08D4 /* Pods-GoCardlessSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoCardlessSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E18DD782091E241B810F175C6BEC5BAF /* GoCardlessSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoCardlessSDK-dummy.m"; sourceTree = "<group>"; };
+		E238DA32AC8D1DFB3BAF494E2A7AE7B8 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = src/iOSSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
+		E4A7ACDE21702B3327739ACCC5FC7B71 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = src/iOSSnapshotTestCaseCore/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
+		E658F388F01C72599CA75537950B6095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA3EBE582D5BC37114FCFF6CE041E2DC /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = src/iOSSnapshotTestCaseCore/FBSnapshotTestController.m; sourceTree = "<group>"; };
+		ED22E936C5B1009263FE20C8786B0D17 /* APIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		EFC6E7632B98F850CD3B664837F9F997 /* UIApplication+KeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+KeyWindow.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIApplication+KeyWindow.m"; sourceTree = "<group>"; };
+		F07560080BFDF82EF5F2D370D2E62329 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
+		F28E842FB59C4DCA02A03388EB2505D3 /* iOSSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
+		F87C331DBF1488E3D0E97CC49EDAA7A9 /* Pods-GoCardlessSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoCardlessSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FA253FA372B12903A55B6D811404A679 /* Pods-GoCardlessSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoCardlessSDK_Example-dummy.m"; sourceTree = "<group>"; };
+		FA5ED84AEB80F3DDDBC5F7F373A978C2 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoCardlessSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA79E60FA05900CDB023C8131898F5A8 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = src/iOSSnapshotTestCaseCore/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+		FD9104D4EB9804E08BB0636331C1D486 /* Pods-GoCardlessSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoCardlessSDK_Tests-Info.plist"; sourceTree = "<group>"; };
+		FF720CB2D069F7B4514C07059459BF19 /* GoCardlessSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoCardlessSDK.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45435B32C6C94612E358AB18DC23E779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882BF2357379EDE0A86D81B2348252CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776C141257C82CFC0DA240BC986A47C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D0F0D873B9A54EF3FB2AE74AEF123B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBF96607B9256AEB24ED0CF7B9F6611 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC95FF847527B8316F072BF1AAD8CF4 /* Foundation.framework in Frameworks */,
+				D6485CC7EEE48F9C51B8676AA276C43F /* QuartzCore.framework in Frameworks */,
+				CE65BFE9849CFC446A2D2726104F1C1D /* UIKit.framework in Frameworks */,
+				A6FF528CA67C9CC12B126062DA7E6B8C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0987BA8B4A5588208F881255114469B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3089ADF39E973B6E193AA7E43A601F64 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032CE7FDEA448069E9D3A3B36FFD213E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				803247687C1C5278C002CA6D5B5D1CA3 /* GoCardlessSDK.modulemap */,
+				E18DD782091E241B810F175C6BEC5BAF /* GoCardlessSDK-dummy.m */,
+				7C44FD1ED2383C436E9421C97D105240 /* GoCardlessSDK-Info.plist */,
+				A27387A15FA2FB9E1F924ECFF7607DA0 /* GoCardlessSDK-prefix.pch */,
+				7A5315261FA7B5B3AE8E9DF37BD56880 /* GoCardlessSDK-umbrella.h */,
+				FF720CB2D069F7B4514C07059459BF19 /* GoCardlessSDK.debug.xcconfig */,
+				B93A92007AE42D22412E7917AE379F2F /* GoCardlessSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GoCardlessSDK";
+			sourceTree = "<group>";
+		};
+		07A6F6CF0FCD9B6C58685FDB61059158 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ED22E936C5B1009263FE20C8786B0D17 /* APIError.swift */,
+				90418E221ECD0CEEFCBC86C5D9F48BC2 /* HttpClient.swift */,
+				C72C9844D7B38E91D0D867175F06FACA /* HttpHeaderProvider.swift */,
+			);
+			name = Network;
+			path = GoCardlessSDK/Classes/Network;
+			sourceTree = "<group>";
+		};
+		29CCA773B1C54DA6536F8B91A6CB3CFC /* Pods-GoCardlessSDK_Example */ = {
+			isa = PBXGroup;
+			children = (
+				DCC6E2403D10AA25B7716D58BADBC983 /* Pods-GoCardlessSDK_Example.modulemap */,
+				C5B02045C98D646A2D6D9D016FBD3DB7 /* Pods-GoCardlessSDK_Example-acknowledgements.markdown */,
+				3544AD35A703626BF30F5ADFCD8A4B00 /* Pods-GoCardlessSDK_Example-acknowledgements.plist */,
+				FA253FA372B12903A55B6D811404A679 /* Pods-GoCardlessSDK_Example-dummy.m */,
+				129BD911F08DCC88A416A1C4BDC76834 /* Pods-GoCardlessSDK_Example-frameworks.sh */,
+				AFE3E1F7481FE790BE8A8537B5B276FE /* Pods-GoCardlessSDK_Example-Info.plist */,
+				5F8C9C47915DBE168F1E7E2EC3F2A839 /* Pods-GoCardlessSDK_Example-umbrella.h */,
+				6F87EB6196E9BB6DE59AB51E0E0DDD67 /* Pods-GoCardlessSDK_Example.debug.xcconfig */,
+				B16A960696DB72D4209D69AE298D9833 /* Pods-GoCardlessSDK_Example.release.xcconfig */,
+			);
+			name = "Pods-GoCardlessSDK_Example";
+			path = "Target Support Files/Pods-GoCardlessSDK_Example";
+			sourceTree = "<group>";
+		};
+		304A524DE6D79F6467975A69BC3974C0 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				1D67339753D459CFB70A92AD901BCB84 /* DependencyContainer.swift */,
+				94E6F4FB62B41D6C5676EAEFF6328B27 /* Injectable.swift */,
+			);
+			name = DI;
+			path = GoCardlessSDK/Classes/DI;
+			sourceTree = "<group>";
+		};
+		435489B56C63D57B6F480411D2ECC160 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A1E235FEE5F2980497D1598AFA058 /* iOSSnapshotTestCase */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E2F1DB15B5EA5F90191EC19442E5429 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				29CCA773B1C54DA6536F8B91A6CB3CFC /* Pods-GoCardlessSDK_Example */,
+				92B6269FEE5DE2045523AD2C492AA7BD /* Pods-GoCardlessSDK_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		690BA1C080E6E757FD250E48D60F6F2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C84ADD6416C07EA82B86D898652757AC /* Endpoint.swift */,
+				89304904657B9958A0BECB44BA2F472D /* Models.swift */,
+				C69120C72B62AA95000A2241 /* Remove.swift */,
+				C6598EF42B63639000FF7818 /* Environment.swift */,
+			);
+			name = Model;
+			path = GoCardlessSDK/Classes/Model;
+			sourceTree = "<group>";
+		};
+		72DC8F393AA0BF066B4A2141FECCD0C9 /* GoCardlessSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9C120B0036E0ACE7F999A931B49AF5D9 /* GoCardlessSDK.swift */,
+				304A524DE6D79F6467975A69BC3974C0 /* DI */,
+				690BA1C080E6E757FD250E48D60F6F2E /* Model */,
+				07A6F6CF0FCD9B6C58685FDB61059158 /* Network */,
+				B7CBC3455F0960D0404B1137910797B1 /* Pod */,
+				7336BA2D1FCAA417A72A6716798791E8 /* Services */,
+				032CE7FDEA448069E9D3A3B36FFD213E /* Support Files */,
+			);
+			name = GoCardlessSDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7336BA2D1FCAA417A72A6716798791E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F37DEED90811C566A1159241C380D5D /* CustomerService.swift */,
+			);
+			name = Services;
+			path = GoCardlessSDK/Classes/Services;
+			sourceTree = "<group>";
+		};
+		7C3A1E235FEE5F2980497D1598AFA058 /* iOSSnapshotTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				8C8C07907639BF0D7F59CCB281533A5D /* Core */,
+				D233498900F2A2AACEDA392E8C854F83 /* Support Files */,
+				DA93A9E1DA2A8AA578138A47322DE9FA /* SwiftSupport */,
+			);
+			path = iOSSnapshotTestCase;
+			sourceTree = "<group>";
+		};
+		8C8C07907639BF0D7F59CCB281533A5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6A23EA881C02510B05858850AE6806D7 /* FBSnapshotTestCase.h */,
+				FA79E60FA05900CDB023C8131898F5A8 /* FBSnapshotTestCase.m */,
+				B4345D7CA9E107541D51126DECECCBBB /* FBSnapshotTestCasePlatform.h */,
+				E4A7ACDE21702B3327739ACCC5FC7B71 /* FBSnapshotTestCasePlatform.m */,
+				7487379E363C535A121E0B27344E301B /* FBSnapshotTestController.h */,
+				EA3EBE582D5BC37114FCFF6CE041E2DC /* FBSnapshotTestController.m */,
+				605C352B4A290154E398392D07849A23 /* UIApplication+KeyWindow.h */,
+				EFC6E7632B98F850CD3B664837F9F997 /* UIApplication+KeyWindow.m */,
+				F07560080BFDF82EF5F2D370D2E62329 /* UIImage+Compare.h */,
+				8EC45DBA821B1DD6DA22C35F9CEBFDD0 /* UIImage+Compare.m */,
+				AC48E972FC6D39CBE744F0DB50C5FA4A /* UIImage+Diff.h */,
+				8530F7A6A83395E077BE92465C105D98 /* UIImage+Diff.m */,
+				218EEC8C227BBE60423734530652FF5E /* UIImage+Snapshot.h */,
+				9629A72BD2DB5BB715D3EC41AE89D621 /* UIImage+Snapshot.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		92B6269FEE5DE2045523AD2C492AA7BD /* Pods-GoCardlessSDK_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BDF5EABE32108B0322634998BC348053 /* Pods-GoCardlessSDK_Tests.modulemap */,
+				8E668B6B1DFCC376E197819A1EFE909E /* Pods-GoCardlessSDK_Tests-acknowledgements.markdown */,
+				F87C331DBF1488E3D0E97CC49EDAA7A9 /* Pods-GoCardlessSDK_Tests-acknowledgements.plist */,
+				D6A54D1784EFF79CFC93011EF3C266B4 /* Pods-GoCardlessSDK_Tests-dummy.m */,
+				A4036F15BEB53EF75272A9763F2682E6 /* Pods-GoCardlessSDK_Tests-frameworks.sh */,
+				FD9104D4EB9804E08BB0636331C1D486 /* Pods-GoCardlessSDK_Tests-Info.plist */,
+				E11E8EF2AC288CAC42448A0F0EED08D4 /* Pods-GoCardlessSDK_Tests-umbrella.h */,
+				FA5ED84AEB80F3DDDBC5F7F373A978C2 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */,
+				DD2FC1A425D3F354F92BBCC553E71FD7 /* Pods-GoCardlessSDK_Tests.release.xcconfig */,
+			);
+			name = "Pods-GoCardlessSDK_Tests";
+			path = "Target Support Files/Pods-GoCardlessSDK_Tests";
+			sourceTree = "<group>";
+		};
+		B622CB2DF7DAB0324DEB203EE7BD8254 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83F2C0ED748CFCA85C7A77B129E96566 /* GoCardlessSDK */,
+				B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */,
+				D74DC6A8D8892C1C953E6A812F97895E /* Pods-GoCardlessSDK_Example */,
+				8CF2CECE68179F77B763338921430855 /* Pods-GoCardlessSDK_Tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7CBC3455F0960D0404B1137910797B1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				AD63AFC9739CD04C6BA8E87B7F5ACAD9 /* GoCardlessSDK.podspec */,
+				DED641853680D18DD951185742BA211C /* LICENSE */,
+				1AC368C0F977EE5D644A6BD23363DC5B /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB2668559AE577E6E8078C0C291AD417 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				F5C9200BD3841C3C192D5FB7CDD456F3 /* Development Pods */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				435489B56C63D57B6F480411D2ECC160 /* Pods */,
+				B622CB2DF7DAB0324DEB203EE7BD8254 /* Products */,
+				5E2F1DB15B5EA5F90191EC19442E5429 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D233498900F2A2AACEDA392E8C854F83 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42D7319B96A6CD585AFB71B8BAE0E8C1 /* iOSSnapshotTestCase.modulemap */,
+				F28E842FB59C4DCA02A03388EB2505D3 /* iOSSnapshotTestCase-dummy.m */,
+				3B0B6AAEDDA099D0EC67CFC14D746091 /* iOSSnapshotTestCase-Info.plist */,
+				A570E9F886109DF3216431997D8B7E9A /* iOSSnapshotTestCase-prefix.pch */,
+				5C2DBEBDB9DB28EBA4E88B735A1BA22C /* iOSSnapshotTestCase-umbrella.h */,
+				CAB44CC0F57E2815CBD7937E47FBE1B8 /* iOSSnapshotTestCase.debug.xcconfig */,
+				1CEDB315205DA5896FF480A3F8AB1420 /* iOSSnapshotTestCase.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iOSSnapshotTestCase";
+			sourceTree = "<group>";
+		};
+		DA93A9E1DA2A8AA578138A47322DE9FA /* SwiftSupport */ = {
+			isa = PBXGroup;
+			children = (
+				E238DA32AC8D1DFB3BAF494E2A7AE7B8 /* SwiftSupport.swift */,
+			);
+			name = SwiftSupport;
+			sourceTree = "<group>";
+		};
+		F5C9200BD3841C3C192D5FB7CDD456F3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72DC8F393AA0BF066B4A2141FECCD0C9 /* GoCardlessSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FB2668559AE577E6E8078C0C291AD417 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */,
+				3280BB5E7B57C31D41117A74F76E9DF3 /* QuartzCore.framework */,
+				1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */,
+				E658F388F01C72599CA75537950B6095 /* XCTest.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24910EE22CFD67D944B9BE2AD54703CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E55754C33B56CA9DDA4BC889EE4604 /* Pods-GoCardlessSDK_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24AEDB6C6B1192E200C1D4C578E8586E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D0024FE0F269830DCCD94135FBBC7E /* GoCardlessSDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1EB42A14F321B5E05B5A1E9FC52B24 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1A2BB1D3C8220B94435A466CEB975B /* FBSnapshotTestCase.h in Headers */,
+				FEA64B15E8F4FA6A32863F33A09110D2 /* FBSnapshotTestCasePlatform.h in Headers */,
+				152ECBEB0D626DF1DBF45D2248297DF7 /* FBSnapshotTestController.h in Headers */,
+				DA70AD852E043CDAD1DD640B4934D2A1 /* iOSSnapshotTestCase-umbrella.h in Headers */,
+				B2F5CCD0AAD0C62B9E0968F6BF3DFDAF /* UIApplication+KeyWindow.h in Headers */,
+				29C8FB178CE64F7DD337A0E494F325C9 /* UIImage+Compare.h in Headers */,
+				2F87290CB899F4DC07FC7AD1A550F132 /* UIImage+Diff.h in Headers */,
+				68EB73BC69D32765911E06DB7B9C3411 /* UIImage+Snapshot.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A001BA2D89521391F5ED06DA688C350F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E97F8E7CB7486F65C6B312225B44BF89 /* Pods-GoCardlessSDK_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C1092A230FDC9F88B4D7D2885FB4ACC /* Pods-GoCardlessSDK_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F07ABCD1E8A84A29ED793B781EB5B956 /* Build configuration list for PBXNativeTarget "Pods-GoCardlessSDK_Example" */;
+			buildPhases = (
+				24910EE22CFD67D944B9BE2AD54703CD /* Headers */,
+				CDA62312128E1ABD80DF9EBC86C0E9EB /* Sources */,
+				C0987BA8B4A5588208F881255114469B /* Frameworks */,
+				A7D074693FE9C249CCA8C952AC50E3B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09C170DCBC20EA38E0E467E00205F9A1 /* PBXTargetDependency */,
+			);
+			name = "Pods-GoCardlessSDK_Example";
+			productName = Pods_GoCardlessSDK_Example;
+			productReference = D74DC6A8D8892C1C953E6A812F97895E /* Pods-GoCardlessSDK_Example */;
+			productType = "com.apple.product-type.framework";
+		};
+		87DFB2B9B2B3CC17FF1D73D8AD8178F5 /* Pods-GoCardlessSDK_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE55C342E21FC4499B62207E21EF8AF9 /* Build configuration list for PBXNativeTarget "Pods-GoCardlessSDK_Tests" */;
+			buildPhases = (
+				A001BA2D89521391F5ED06DA688C350F /* Headers */,
+				BD030651ABCCB25136A5307A6560884D /* Sources */,
+				45435B32C6C94612E358AB18DC23E779 /* Frameworks */,
+				FE42BC75DB90867962D6251C27988E2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6823833F924E42B85A93E579C292E53A /* PBXTargetDependency */,
+				0CEE0DBAF58DEE0CF228E4454DAAA85B /* PBXTargetDependency */,
+			);
+			name = "Pods-GoCardlessSDK_Tests";
+			productName = Pods_GoCardlessSDK_Tests;
+			productReference = 8CF2CECE68179F77B763338921430855 /* Pods-GoCardlessSDK_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+		C393038B0BEF088C1B93E6528005862D /* iOSSnapshotTestCase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1331103E3FF831ED3DEC07467580ACF /* Build configuration list for PBXNativeTarget "iOSSnapshotTestCase" */;
+			buildPhases = (
+				4B1EB42A14F321B5E05B5A1E9FC52B24 /* Headers */,
+				CBFA9633F7D944C59FACAE3F24EE13E5 /* Sources */,
+				9BBF96607B9256AEB24ED0CF7B9F6611 /* Frameworks */,
+				D19F6C1CD5C60D32A7F7703CDA497114 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSSnapshotTestCase;
+			productName = FBSnapshotTestCase;
+			productReference = B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */;
+			productType = "com.apple.product-type.framework";
+		};
+		FC13BCC6C28AF9E9DB6E8B36EACA7145 /* GoCardlessSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 406C7EFA51ECFAA98AAD05FEA0B1AA63 /* Build configuration list for PBXNativeTarget "GoCardlessSDK" */;
+			buildPhases = (
+				24AEDB6C6B1192E200C1D4C578E8586E /* Headers */,
+				8B425959B541A97B9AD183E55AC7EB12 /* Sources */,
+				776C141257C82CFC0DA240BC986A47C6 /* Frameworks */,
+				72FEBF3DBFD37875E131588A95167495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoCardlessSDK;
+			productName = GoCardlessSDK;
+			productReference = 83F2C0ED748CFCA85C7A77B129E96566 /* GoCardlessSDK */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = B622CB2DF7DAB0324DEB203EE7BD8254 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC13BCC6C28AF9E9DB6E8B36EACA7145 /* GoCardlessSDK */,
+				C393038B0BEF088C1B93E6528005862D /* iOSSnapshotTestCase */,
+				6C1092A230FDC9F88B4D7D2885FB4ACC /* Pods-GoCardlessSDK_Example */,
+				87DFB2B9B2B3CC17FF1D73D8AD8178F5 /* Pods-GoCardlessSDK_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72FEBF3DBFD37875E131588A95167495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7D074693FE9C249CCA8C952AC50E3B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D19F6C1CD5C60D32A7F7703CDA497114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE42BC75DB90867962D6251C27988E2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B425959B541A97B9AD183E55AC7EB12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				836C4E02D809AED74B26AB83DA93480E /* APIError.swift in Sources */,
+				C6598EF52B63639000FF7818 /* Environment.swift in Sources */,
+				4AB77C48BE021CCDD89D74116C6E7398 /* CustomerService.swift in Sources */,
+				CA03BD01E1CD988537EDB250FCD81CA9 /* DependencyContainer.swift in Sources */,
+				ECDD765CEEF00EEFB82D30DAF6B930DD /* Endpoint.swift in Sources */,
+				C69120C82B62AA95000A2241 /* Remove.swift in Sources */,
+				58864D444B4DE2B9E8DD13D9CA06D33A /* GoCardlessSDK.swift in Sources */,
+				47F8C9B8F11AF1DC2DC0384B9476372B /* GoCardlessSDK-dummy.m in Sources */,
+				DDDEEACD1DEB02775E10155ECBFE8D69 /* HttpClient.swift in Sources */,
+				335B9A0A5E73F1E5363041BD22E5DE77 /* HttpHeaderProvider.swift in Sources */,
+				48950B419116C2744C7E96F063DA3CD6 /* Injectable.swift in Sources */,
+				5713C934E7156126919CA080DF014F62 /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD030651ABCCB25136A5307A6560884D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87A469B33F6B73085DFE17C1793089E /* Pods-GoCardlessSDK_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA9633F7D944C59FACAE3F24EE13E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A3D450EBF4DEB639B74C43E2B7432D /* FBSnapshotTestCase.m in Sources */,
+				66B0A70C677802256948EFFE1A8D6017 /* FBSnapshotTestCasePlatform.m in Sources */,
+				91110FBB242BE13004080D023B229C99 /* FBSnapshotTestController.m in Sources */,
+				53D4A960291D7644E8ECA89B7DDFE4D5 /* iOSSnapshotTestCase-dummy.m in Sources */,
+				822C3867B1A9CD18C804496E45F6B25B /* SwiftSupport.swift in Sources */,
+				0A92CFCC232EEF71A946C4AA1CAD10D3 /* UIApplication+KeyWindow.m in Sources */,
+				63C8130B415695A7ACDAD1428140FC3E /* UIImage+Compare.m in Sources */,
+				49D4F391E6F1C56A0DDFC2229A83AF5F /* UIImage+Diff.m in Sources */,
+				4B59F3D455600B829C43CF743C60A384 /* UIImage+Snapshot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA62312128E1ABD80DF9EBC86C0E9EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29FA15792A37A36CFE784F3B81FE8F44 /* Pods-GoCardlessSDK_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09C170DCBC20EA38E0E467E00205F9A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoCardlessSDK;
+			target = FC13BCC6C28AF9E9DB6E8B36EACA7145 /* GoCardlessSDK */;
+			targetProxy = 16168ED0C64C0C49F4EF97F533FC4F70 /* PBXContainerItemProxy */;
+		};
+		0CEE0DBAF58DEE0CF228E4454DAAA85B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSSnapshotTestCase;
+			target = C393038B0BEF088C1B93E6528005862D /* iOSSnapshotTestCase */;
+			targetProxy = 61E03C7982CA8D0AA69AFF3DD0D58EE0 /* PBXContainerItemProxy */;
+		};
+		6823833F924E42B85A93E579C292E53A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GoCardlessSDK_Example";
+			target = 6C1092A230FDC9F88B4D7D2885FB4ACC /* Pods-GoCardlessSDK_Example */;
+			targetProxy = 7E546D1FB0A082B5ACC0EC2B71740B71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		46B1626B972D0B94D874767E29D9353B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16A960696DB72D4209D69AE298D9833 /* Pods-GoCardlessSDK_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoCardlessSDK_Example/Pods-GoCardlessSDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GoCardlessSDK_Example/Pods-GoCardlessSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6555EB647BBE82D0907426C67FF81021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB44CC0F57E2815CBD7937E47FBE1B8 /* iOSSnapshotTestCase.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase.modulemap";
+				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.4;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9ED86E763E7B87A73D9E0445088EA5AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F87EB6196E9BB6DE59AB51E0E0DDD67 /* Pods-GoCardlessSDK_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoCardlessSDK_Example/Pods-GoCardlessSDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GoCardlessSDK_Example/Pods-GoCardlessSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8FE58C07EBB2775BAC3E03BA13C8310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CEDB315205DA5896FF480A3F8AB1420 /* iOSSnapshotTestCase.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase.modulemap";
+				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.4;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D033936C0FAAE16114F3AB6D9377B27C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5ED84AEB80F3DDDBC5F7F373A978C2 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D7F435254C901EA274DBA05610D9BB43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2FC1A425D3F354F92BBCC553E71FD7 /* Pods-GoCardlessSDK_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F72762EB7CC153A31EEF2BEAF34E9E79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF720CB2D069F7B4514C07059459BF19 /* GoCardlessSDK.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GoCardlessSDK/GoCardlessSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoCardlessSDK/GoCardlessSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoCardlessSDK/GoCardlessSDK.modulemap";
+				PRODUCT_MODULE_NAME = GoCardlessSDK;
+				PRODUCT_NAME = GoCardlessSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB8AE3110D530B67A0C7F760F38B92EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B93A92007AE42D22412E7917AE379F2F /* GoCardlessSDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GoCardlessSDK/GoCardlessSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoCardlessSDK/GoCardlessSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoCardlessSDK/GoCardlessSDK.modulemap";
+				PRODUCT_MODULE_NAME = GoCardlessSDK;
+				PRODUCT_NAME = GoCardlessSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		406C7EFA51ECFAA98AAD05FEA0B1AA63 /* Build configuration list for PBXNativeTarget "GoCardlessSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72762EB7CC153A31EEF2BEAF34E9E79 /* Debug */,
+				FB8AE3110D530B67A0C7F760F38B92EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F07ABCD1E8A84A29ED793B781EB5B956 /* Build configuration list for PBXNativeTarget "Pods-GoCardlessSDK_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ED86E763E7B87A73D9E0445088EA5AB /* Debug */,
+				46B1626B972D0B94D874767E29D9353B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1331103E3FF831ED3DEC07467580ACF /* Build configuration list for PBXNativeTarget "iOSSnapshotTestCase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6555EB647BBE82D0907426C67FF81021 /* Debug */,
+				B8FE58C07EBB2775BAC3E03BA13C8310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE55C342E21FC4499B62207E21EF8AF9 /* Build configuration list for PBXNativeTarget "Pods-GoCardlessSDK_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D033936C0FAAE16114F3AB6D9377B27C /* Debug */,
+				D7F435254C901EA274DBA05610D9BB43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

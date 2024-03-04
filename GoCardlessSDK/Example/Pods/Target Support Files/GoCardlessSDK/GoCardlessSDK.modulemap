@@ -1,0 +1,6 @@
+framework module GoCardlessSDK {
+  umbrella header "GoCardlessSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

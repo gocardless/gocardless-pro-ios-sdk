@@ -1,0 +1,27 @@
+PODS:
+  - GoCardlessSDK (0.1.0)
+  - iOSSnapshotTestCase (8.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
+  - iOSSnapshotTestCase/Core (8.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (8.0.0):
+    - iOSSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - GoCardlessSDK (from `../`)
+  - iOSSnapshotTestCase (~> 8.0.0)
+
+SPEC REPOS:
+  trunk:
+    - iOSSnapshotTestCase
+
+EXTERNAL SOURCES:
+  GoCardlessSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GoCardlessSDK: 1c0193b64f29c26a70fabf2768d6411befe3bd13
+  iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+
+PODFILE CHECKSUM: c4840e4400ab3fee164008cf281e93ed9c515462
+
+COCOAPODS: 1.12.0

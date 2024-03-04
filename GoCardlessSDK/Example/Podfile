@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'GoCardlessSDK_Example' do
+  pod 'GoCardlessSDK', :path => '../'
+
+  target 'GoCardlessSDK_Tests' do
+    inherit! :search_paths
+
+    pod 'iOSSnapshotTestCase' , '~> 8.0.0'
+  end
+end
