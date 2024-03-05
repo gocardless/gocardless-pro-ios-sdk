@@ -15,3 +15,4 @@ disabled_rules:
   - cyclomatic_complexity
   - type_body_length
   - trailing_whitespace
+  - redundant_string_enum_value

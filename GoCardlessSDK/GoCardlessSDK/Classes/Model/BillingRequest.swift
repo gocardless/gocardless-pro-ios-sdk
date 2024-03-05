@@ -35,19 +35,19 @@ public struct BillingRequest: Codable {
         case resources = "resources"
     }
     
-    public init(id: String?,
-                createdAt: String?,
-                status: String?,
-                mandateRequest: MandateRequest?,
-                paymentRequest: PaymentRequest?,
-                metadata: Metadata?,
-                links: Links?,
-                fallbackEnabled: Bool?,
-                fallbackOccurred: Bool?,
-                signFlowURL: String?,
-                creditorName: String?,
-                actions: [Action]?,
-                resources: Resources?) {
+    public init(id: String? = nil,
+                createdAt: String? = nil,
+                status: String? = nil,
+                mandateRequest: MandateRequest? = nil,
+                paymentRequest: PaymentRequest? = nil,
+                metadata: Metadata? = nil,
+                links: Links? = nil,
+                fallbackEnabled: Bool? = nil,
+                fallbackOccurred: Bool? = nil,
+                signFlowURL: String? = nil,
+                creditorName: String? = nil,
+                actions: [Action]? = nil,
+                resources: Resources? = nil) {
         self.id = id
         self.createdAt = createdAt
         self.status = status

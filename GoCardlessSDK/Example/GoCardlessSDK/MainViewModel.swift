@@ -24,26 +24,10 @@ class MainViewModel: ObservableObject {
     let customerService = GoCardlessSDK.shared.customerService
     var subscriptions = Set<AnyCancellable>()
     
-//    @MainActor
-//    func fetchCustomers() {
-//        state = .loading
-//        GoCardlessSDK.shared.customerService.all { result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let customers):
-//                    self.state = .success(customers: customers)
-//                case .failure(let error):
-//                    self.state = .error
-//                    print(error)
-//                }
-//            }
-//        }
-//    }
-    
     @MainActor
     func fetchCustomers() {
         state = .loading
-        
+        print("Fetch customers")
         customerService.all()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
@@ -67,7 +51,7 @@ class MainViewModel: ObservableObject {
         
         customerService.delete(customerId: customer.id ?? "")
             .receive(on: DispatchQueue.main)
-            .flatMap({ remove in
+            .flatMap({ _ in
                 allCustomers
             })
             .sink(receiveCompletion: { (completion) in

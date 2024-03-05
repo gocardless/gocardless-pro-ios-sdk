@@ -9,5 +9,6 @@ target 'GoCardlessSDK_Example' do
     inherit! :search_paths
 
     pod 'iOSSnapshotTestCase' , '~> 8.0.0'
+    pod 'Nimble', '~> 13'
   end
 end

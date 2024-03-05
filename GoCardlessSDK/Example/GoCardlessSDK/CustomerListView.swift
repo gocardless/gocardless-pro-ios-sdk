@@ -16,7 +16,7 @@ struct CustomerListView: View {
     
     @available(iOS 15.0, *)
     var body: some View {
-        List (customers.customers) { customer in
+        List(customers.customers) { customer in
             NavigationLink(destination: CustomerDetailView(customer: customer)) {
                 CustomerRow(customer: customer, onDelete: onDelete)
             }

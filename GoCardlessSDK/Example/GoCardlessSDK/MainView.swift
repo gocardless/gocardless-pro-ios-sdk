@@ -15,7 +15,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                switch(viewModel.state) {
+                switch viewModel.state {
                 case .idle:
                     Text("Initial")
                 case .loading:
@@ -32,7 +32,7 @@ struct MainView: View {
                 }
             }
             .onAppear {
-                viewModel.fetchCustomers()
+                //viewModel.fetchCustomers()
             }
         }
     }

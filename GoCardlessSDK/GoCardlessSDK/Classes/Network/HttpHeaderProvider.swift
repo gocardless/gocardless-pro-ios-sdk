@@ -7,6 +7,11 @@
 
 import Foundation
 
+/// Adds custom headers to the API requests
+///
+/// This provider adds the following headers:
+/// - "GoCardless-Version": Specifies the GoCardless API version (e.g., "2015-07-06").
+/// - "Authorization": Includes the access token in the format "Bearer {accessToken}".
 class HttpHeaderProvider {
     private let accessToken: String
     

@@ -19,7 +19,7 @@ public class BillingRequestService {
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
-            .map{ $0.billingRequests ??  billingRequest}
+            .map { $0.billingRequests ??  billingRequest }
             .eraseToAnyPublisher()
     }
 }

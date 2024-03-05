@@ -15,26 +15,6 @@ public class CustomerService {
         self.httpClient = httpClient
     }
     
-    public func all(completion: @escaping ((Result<Customers, Error>) -> Void)) {
-        let endpoint = Endpoint.customerList
-        
-        httpClient.request(endpoint: endpoint) { result in
-            switch result {
-            case .success(let data):
-                print(String(data: data, encoding: .utf8)!)
-                do {
-                    let items = try JSONDecoder().decode(Customers.self, from: data)
-                    completion(.success(items))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    // Combine
     public func all() -> AnyPublisher<Customers, Error> {
         print(" CustomerService > all" )
         let endpoint = Endpoint.customerList

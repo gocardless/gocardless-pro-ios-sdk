@@ -11,12 +11,14 @@ enum Endpoint {
     case customerList
     case customerRemove(customerId: String)
     case billingRequestCreate
+    case billingRequestFlowCreate
     
     var path: String {
         switch self {
         case .customerList: return "/customers"
         case .customerRemove(let customerId): return "/customers/\(customerId)"
         case .billingRequestCreate: return "/billing_requests"
+        case .billingRequestFlowCreate: return "/billing_request_flows"
         }
     }
     
@@ -24,8 +26,14 @@ enum Endpoint {
         switch self {
         case .customerList: return "GET"
         case .customerRemove: return "DELETE"
-        case .billingRequestCreate: return "POST"
+        case .billingRequestCreate, .billingRequestFlowCreate: return "POST"
         }
+    }
+}
+
+extension Endpoint {
+    func url(environment: Environment) -> URL? {
+        URLRequest(environemnt: environment, endpoint: self).url
     }
 }
 

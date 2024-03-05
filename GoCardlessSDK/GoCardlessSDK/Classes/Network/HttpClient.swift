@@ -11,43 +11,26 @@ import Combine
 class HttpClient {
     private let httpHeaderProvider: HttpHeaderProvider
     private let envrionment: Environment
+    private let urlSession: URLSession
     
-    init(httpHeaderProvider: HttpHeaderProvider, envrionment: Environment) {
+    init(httpHeaderProvider: HttpHeaderProvider,
+         envrionment: Environment,
+         urlSession: URLSession = URLSession.shared) {
         self.httpHeaderProvider = httpHeaderProvider
         self.envrionment = envrionment
+        self.urlSession = urlSession
     }
     
-    // Completion blocks
-    func request(endpoint: Endpoint, result: @escaping ((Result<Data, Error>) -> Void)) {
-        let request = URLRequest(environemnt: envrionment, endpoint: endpoint)
-            .setHeaders(provider: httpHeaderProvider)
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else {
-                result(.failure(APIError.notFound))
-                return
-            }
-            
-            if let error = error {
-                result(.failure(error))
-                return
-            }
-            
-            result(.success(data))
-        }
-        
-        task.resume()
-    }
-    
-    // Combine
     func request(endpoint: Endpoint) -> AnyPublisher<Data, Error> {
         let request = URLRequest(environemnt: envrionment, endpoint: endpoint)
             .setHeaders(provider: httpHeaderProvider)
-        
-        return URLSession.shared.dataTaskPublisher(for: request)
+        print(" MAKE request for \(endpoint.path)")
+        return urlSession.dataTaskPublisher(for: request)
             .tryMap { data, response in
+                print(" RESPONSE 1")
                 guard let httpResponse = response as? HTTPURLResponse,
                       (200...299).contains(httpResponse.statusCode) else {
+                    print(" RESPONSE 1 error")
                     throw APIError.notFound
                 }
                 print(" RESPONSE: \n\(String(data: data, encoding: .utf8)!)")
