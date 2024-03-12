@@ -1,0 +1,150 @@
+{
+  "billing_requests": {
+    "id": "BRQ0005VSW6C50D",
+    "created_at": "2024-03-11T17:21:47.339Z",
+    "status": "pending",
+    "mandate_request": {
+      "currency": "GBP",
+      "constraints": null,
+      "scheme": "bacs",
+      "sweeping": false,
+      "verify": "recommended",
+      "links": {},
+      "metadata": {
+        "postman": "mandate-only-br"
+      },
+      "description": null,
+      "payer_requested_dual_signature": false
+    },
+    "payment_request": null,
+    "metadata": {
+      "test": "BR731"
+    },
+    "links": {
+      "customer": "CU001443JPMNCT",
+      "customer_billing_detail": "CBD000J8BXKD056",
+      "creditor": "CR00007J0CSSJG",
+      "organisation": "OR00005F8R8W8Y",
+      "mandate_request": "MRQ0005CTBMY47A"
+    },
+    "fallback_enabled": false,
+    "fallback_occurred": false,
+    "sign_flow_url": null,
+    "creditor_name": "GunhanOrg",
+    "actions": [
+      {
+        "type": "choose_currency",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [],
+        "status": "completed",
+        "available_currencies": [
+          "USD",
+          "SEK",
+          "GBP",
+          "AUD",
+          "NZD",
+          "DKK",
+          "CAD",
+          "EUR"
+        ]
+      },
+      {
+        "type": "collect_customer_details",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [
+          "choose_currency"
+        ],
+        "status": "pending",
+        "collect_customer_details": {
+          "incomplete_fields": {
+            "customer": [
+              "email",
+              "given_name",
+              "family_name"
+            ],
+            "customer_billing_detail": [
+              "address_line1",
+              "city",
+              "postal_code",
+              "country_code"
+            ]
+          },
+          "default_country_code": "GB"
+        }
+      },
+      {
+        "type": "collect_bank_account",
+        "required": true,
+        "completes_actions": [
+          "choose_currency"
+        ],
+        "available_country_codes": [
+          "GB"
+        ],
+        "requires_actions": [],
+        "status": "pending"
+      },
+      {
+        "type": "confirm_payer_details",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [
+          "collect_customer_details",
+          "collect_bank_account"
+        ],
+        "status": "pending"
+      },
+      {
+        "type": "bank_authorisation",
+        "required": false,
+        "completes_actions": [
+          "collect_bank_account"
+        ],
+        "requires_actions": [
+          "select_institution"
+        ],
+        "status": "pending",
+        "bank_authorisation": {
+          "authorisation_type": "mandate",
+          "adapter": "open_banking_gateway_ais"
+        }
+      }
+    ],
+    "resources": {
+      "customer": {
+        "id": "CU001443JPMNCT",
+        "created_at": "2024-03-11T17:21:47.323Z",
+        "email": null,
+        "given_name": null,
+        "family_name": null,
+        "company_name": null,
+        "language": "en",
+        "phone_number": null,
+        "metadata": {}
+      },
+      "customer_billing_detail": {
+        "id": "CBD000J8BXKD056",
+        "created_at": "2024-03-11T17:21:47.334Z",
+        "address_line1": null,
+        "address_line2": null,
+        "address_line3": null,
+        "city": null,
+        "region": null,
+        "postal_code": null,
+        "country_code": null,
+        "swedish_identity_number": null,
+        "danish_identity_number": null
+      }
+    },
+    "experimentation": {
+      "is_eligible_for_share_of_wallet_experiments": true,
+      "is_eligible_for_optional_vm_experiments": false,
+      "is_eligible_for_institution_experiments": false,
+      "is_eligible_for_ach_optional_address_experiments": false,
+      "is_eligible_for_single_tab_experiments": false,
+      "is_eligible_for_bankid_safe_start_experiments": false
+    }
+  }
+}

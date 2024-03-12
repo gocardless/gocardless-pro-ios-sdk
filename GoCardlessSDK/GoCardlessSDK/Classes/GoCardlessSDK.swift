@@ -15,6 +15,8 @@ public class GoCardlessSDK: NSObject {
     private var initialised: Bool = false
     
     public private(set) lazy var customerService: CustomerService = container.resolve()
+    public private(set) lazy var billingRequestService: BillingRequestService = container.resolve()
+    public private(set) lazy var billingRequestFlowService: BillingRequestFlowService = container.resolve()
     
     /// Initialise the GoCardless SDK
     ///
@@ -47,6 +49,12 @@ public class GoCardlessSDK: NSObject {
         }
         container.single(CustomerService.self) { _, _  in
             CustomerService(httpClient: self.container.resolve())
+        }
+        container.single(BillingRequestService.self) { _, _  in
+            BillingRequestService(httpClient: self.container.resolve())
+        }
+        container.single(BillingRequestFlowService.self) { _, _  in
+            BillingRequestFlowService(httpClient: self.container.resolve())
         }
     }
 }

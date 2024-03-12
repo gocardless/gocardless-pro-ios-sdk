@@ -14,6 +14,12 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* BillingRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* BillingRequestTests.swift */; };
 		BB7E4AED3D51B8CAFC75D27D /* Pods_GoCardlessSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8507F839835DB76BB56CC /* Pods_GoCardlessSDK_Example.framework */; };
+		C64FFA0E2B9FC31700CCD674 /* billing_request_direct_debit_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */; };
+		C64FFA112B9FCCF400CCD674 /* billing_request_payment_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */; };
+		C64FFA122B9FCCF400CCD674 /* billing_request_dual_flow.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA102B9FCCF400CCD674 /* billing_request_dual_flow.json */; };
+		C64FFA202B9FD24F00CCD674 /* BillingRequestFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */; };
+		C64FFA222B9FD3D600CCD674 /* billing_request_flow_success.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA212B9FD3D500CCD674 /* billing_request_flow_success.json */; };
+		C64FFA242B9FD5CD00CCD674 /* billing_request_flow_error.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA232B9FD5CD00CCD674 /* billing_request_flow_error.json */; };
 		C6598EF82B63BC7600FF7818 /* CustomerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6598EF72B63BC7600FF7818 /* CustomerDetailView.swift */; };
 		C68EDC642B96A2B000C7D3AF /* billing_request_error.json in Resources */ = {isa = PBXBuildFile; fileRef = C68EDC5E2B96A2B000C7D3AF /* billing_request_error.json */; };
 		C68EDC662B96A2B000C7D3AF /* billing_request_corrupt.json in Resources */ = {isa = PBXBuildFile; fileRef = C68EDC5F2B96A2B000C7D3AF /* billing_request_corrupt.json */; };
@@ -58,6 +64,12 @@
 		9EA55D13E1CFC9630FF45C88 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCardlessSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D22E4FEA720574CD38BF68 /* Pods-GoCardlessSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCardlessSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C37E2406DA8E3017862D1B9B /* GoCardlessSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GoCardlessSDK.podspec; path = ../GoCardlessSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_direct_debit_only.json; sourceTree = "<group>"; };
+		C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_payment_only.json; sourceTree = "<group>"; };
+		C64FFA102B9FCCF400CCD674 /* billing_request_dual_flow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_dual_flow.json; sourceTree = "<group>"; };
+		C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestFlowTests.swift; sourceTree = "<group>"; };
+		C64FFA212B9FD3D500CCD674 /* billing_request_flow_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_flow_success.json; sourceTree = "<group>"; };
+		C64FFA232B9FD5CD00CCD674 /* billing_request_flow_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_flow_error.json; sourceTree = "<group>"; };
 		C6598EF72B63BC7600FF7818 /* CustomerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailView.swift; sourceTree = "<group>"; };
 		C68EDC5E2B96A2B000C7D3AF /* billing_request_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_error.json; sourceTree = "<group>"; };
 		C68EDC5F2B96A2B000C7D3AF /* billing_request_corrupt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_corrupt.json; sourceTree = "<group>"; };
@@ -155,6 +167,7 @@
 				C68EDC5C2B96A26F00C7D3AF /* Resources */,
 				607FACEB1AFB9204008FA782 /* BillingRequestTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -199,6 +212,11 @@
 		C68EDC5C2B96A26F00C7D3AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C64FFA232B9FD5CD00CCD674 /* billing_request_flow_error.json */,
+				C64FFA212B9FD3D500CCD674 /* billing_request_flow_success.json */,
+				C64FFA102B9FCCF400CCD674 /* billing_request_dual_flow.json */,
+				C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */,
+				C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */,
 				C68EDC5E2B96A2B000C7D3AF /* billing_request_error.json */,
 				C68EDC602B96A2B000C7D3AF /* billing_request_success.json */,
 				C68EDC5F2B96A2B000C7D3AF /* billing_request_corrupt.json */,
@@ -350,9 +368,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64FFA222B9FD3D600CCD674 /* billing_request_flow_success.json in Resources */,
+				C64FFA112B9FCCF400CCD674 /* billing_request_payment_only.json in Resources */,
 				C68EDC6C2B96A2B100C7D3AF /* billing_request_success_unknown.json in Resources */,
 				C68EDC6A2B96A2B100C7D3AF /* billing_request_error_malformed.json in Resources */,
+				C64FFA122B9FCCF400CCD674 /* billing_request_dual_flow.json in Resources */,
 				C68EDC642B96A2B000C7D3AF /* billing_request_error.json in Resources */,
+				C64FFA242B9FD5CD00CCD674 /* billing_request_flow_error.json in Resources */,
+				C64FFA0E2B9FC31700CCD674 /* billing_request_direct_debit_only.json in Resources */,
 				C68EDC662B96A2B000C7D3AF /* billing_request_corrupt.json in Resources */,
 				C68EDC682B96A2B000C7D3AF /* billing_request_success.json in Resources */,
 			);
@@ -474,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64FFA202B9FD24F00CCD674 /* BillingRequestFlowTests.swift in Sources */,
 				C68EDC752B96B6FA00C7D3AF /* TestFileManager.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* BillingRequestTests.swift in Sources */,
 				C68EDC722B96AB3000C7D3AF /* URLProtocolStub.swift in Sources */,

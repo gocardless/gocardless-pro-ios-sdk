@@ -23,7 +23,7 @@ class URLProtocolStub: URLProtocol {
     
     static func errorStub(endpoint: Endpoint, fileName: String) {
         let url = endpoint.url(environment: TestConstants.environment)!
-        let response = HTTPURLResponse(url: url, statusCode: 404, httpVersion: nil, headerFields: nil)
+        let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
         let bundle = StubBundle(nil, TestFileManager.loadFile(name: fileName)!, response)
         
         URLProtocolStub.testURLs = [endpoint.url(environment: TestConstants.environment)!: bundle]
@@ -39,8 +39,12 @@ class URLProtocolStub: URLProtocol {
 
     override func startLoading() {
         if let url = request.url, let bundle = Self.testURLs[url] {
-            client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!,
-                                     cacheStoragePolicy: .notAllowed)
+            client?.urlProtocol(self,
+                                didReceive: HTTPURLResponse(url: url, 
+                                                            statusCode: 200,
+                                                            httpVersion: nil,
+                                                            headerFields: nil)!, 
+                                cacheStoragePolicy: .notAllowed)
             
             if let response = bundle.response {
                 client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
