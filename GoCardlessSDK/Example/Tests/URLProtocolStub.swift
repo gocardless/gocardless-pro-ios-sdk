@@ -39,13 +39,6 @@ class URLProtocolStub: URLProtocol {
 
     override func startLoading() {
         if let url = request.url, let bundle = Self.testURLs[url] {
-            client?.urlProtocol(self,
-                                didReceive: HTTPURLResponse(url: url, 
-                                                            statusCode: 200,
-                                                            httpVersion: nil,
-                                                            headerFields: nil)!, 
-                                cacheStoragePolicy: .notAllowed)
-            
             if let response = bundle.response {
                 client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
             }

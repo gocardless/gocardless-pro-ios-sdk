@@ -27,13 +27,18 @@ class HttpClient {
         print(" MAKE request for \(endpoint.path)")
         return urlSession.dataTaskPublisher(for: request)
             .tryMap { data, response in
-                print(" RESPONSE 1")
+                print(" RESPONSE tryMap:")
+                print(" RESPONSE.data: \n\(String(data: data, encoding: .utf8)!)")
+                
                 guard let httpResponse = response as? HTTPURLResponse,
                       (200...299).contains(httpResponse.statusCode) else {
                     print(" RESPONSE 1 error")
+                    
+                    let decoder = JSONDecoder()
+//                    throw try decoder.decode(ErrorResponse.self, from: data)
+                    
                     throw APIError.notFound
                 }
-                print(" RESPONSE: \n\(String(data: data, encoding: .utf8)!)")
                 return data
             }
             .receive(on: DispatchQueue.main)
