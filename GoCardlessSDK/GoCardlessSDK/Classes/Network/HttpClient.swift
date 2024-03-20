@@ -30,16 +30,10 @@ class HttpClient {
             request.httpBody = encoded
         }
         
-        print(" HttpClient.request.path: \(endpoint.path)")
-        
         return urlSession.dataTaskPublisher(for: request)
             .tryMap { data, response in
-                print(" RESPONSE tryMap:")
-//                print(" RESPONSE.data: \n\(String(data: data, encoding: .utf8)!)")
-                
                 let httpResponse = response as? HTTPURLResponse
                 let code = httpResponse?.statusCode ?? -999
-                print(" [ -> ] HTTPClient.response.code: \(code)")
                 
                 guard (200...299).contains(code) else {
                     switch code {
