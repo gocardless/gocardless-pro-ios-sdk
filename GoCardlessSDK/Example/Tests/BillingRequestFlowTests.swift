@@ -8,7 +8,8 @@ class BillingRequestFlowTests: XCTestCase {
     private var httpClient: HttpClient!
     private var billingRequestFlowService: BillingRequestFlowService!
     private var cancellables: Set<AnyCancellable>!
-    
+    private var endpoint = Endpoint.billingRequestFlowCreate(body: BillingRequestFlowWrapper(billingRequestFlows: BillingRequestFlow()))
+
     override func setUp() {
         super.setUp()
         cancellables = []
@@ -29,7 +30,7 @@ class BillingRequestFlowTests: XCTestCase {
     
     func test_billing_request_flow_create() {
         // Given
-        URLProtocolStub.successStub(endpoint: .billingRequestFlowCreate, fileName: "billing_request_flow_success")
+        URLProtocolStub.successStub(endpoint: endpoint, fileName: "billing_request_flow_success")
         let expectation = XCTestExpectation(description: "HttpClient request")
         var result: BillingRequestFlow? = nil
         
@@ -59,7 +60,7 @@ class BillingRequestFlowTests: XCTestCase {
     
     func test_billing_request_flow_error() {
         // Given
-        URLProtocolStub.errorStub(endpoint: .billingRequestFlowCreate, fileName: "billing_request_flow_error")
+        URLProtocolStub.errorStub(endpoint: endpoint, fileName: "billing_request_flow_error")
         let expectation = XCTestExpectation(description: "HttpClient request")
         var result: Error? = nil
         
@@ -80,6 +81,6 @@ class BillingRequestFlowTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
         
         // Then
-        expect(result).to(matchError(APIError.notFound))
+        expect(result).to(matchError(APIError.invalidApiUsageError))
     }
 }

@@ -19,7 +19,7 @@ public class BillingRequestFlowService {
     }
     
     public func createBillingRequestFlow(billingRequestFlow: BillingRequestFlow) -> AnyPublisher<BillingRequestFlow, Error> {
-        let endpoint = Endpoint.billingRequestFlowCreate
+        let endpoint = Endpoint.billingRequestFlowCreate(body: BillingRequestFlowWrapper(billingRequestFlows: billingRequestFlow))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestFlowWrapper.self, decoder: JSONDecoder())

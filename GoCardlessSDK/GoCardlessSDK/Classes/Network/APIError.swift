@@ -7,5 +7,11 @@
 
 enum APIError: Error {
     case notFound
-    case httpError
+    case authenticationError
+    case permissionError
+    case rateLimitError
+    case goCardlessInternalError
+    case invalidApiUsageError
+    case invalidStateError
+    case validationFailedError
 }

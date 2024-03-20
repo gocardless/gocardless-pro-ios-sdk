@@ -15,6 +15,7 @@ class URLProtocolStub: URLProtocol {
     
     static func successStub(endpoint: Endpoint, fileName: String) {
         let url = endpoint.url(environment: TestConstants.environment)!
+        print(" successStub.url: \(url)")
         let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
         let bundle = StubBundle(nil, TestFileManager.loadFile(name: fileName)!, response)
         

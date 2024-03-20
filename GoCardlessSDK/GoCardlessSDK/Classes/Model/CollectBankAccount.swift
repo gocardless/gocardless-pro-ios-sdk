@@ -33,7 +33,17 @@ public struct CollectBankAccount: Codable {
         case payId = "pay_id"
     }
     
-    init(accountHolderName: String?, accountNumber: String?, accountNumberSuffix: String?, accountType: String?, bankCode: String?, branchCode: String?, countryCode: String?, currency: String?, iban: String?, metadata: Metadata?, payId: String?) {
+    init(accountHolderName: String? = nil,
+         accountNumber: String? = nil,
+         accountNumberSuffix: String? = nil,
+         accountType: String? = nil,
+         bankCode: String? = nil,
+         branchCode: String? = nil,
+         countryCode: String? = nil,
+         currency: String? = nil,
+         iban: String? = nil,
+         metadata: Metadata? = nil,
+         payId: String? = nil) {
         self.accountHolderName = accountHolderName
         self.accountNumber = accountNumber
         self.accountNumberSuffix = accountNumberSuffix

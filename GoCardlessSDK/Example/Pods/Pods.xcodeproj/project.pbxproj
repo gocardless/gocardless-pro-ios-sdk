@@ -139,6 +139,10 @@
 		C64FFA1C2B9FCF2100CCD674 /* SchemeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1B2B9FCF2100CCD674 /* SchemeIdentifier.swift */; };
 		C64FFA1E2B9FCFFF00CCD674 /* CollectBankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1D2B9FCFFF00CCD674 /* CollectBankAccount.swift */; };
 		C64FFA272B9FDF0D00CCD674 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA262B9FDF0D00CCD674 /* Errors.swift */; };
+		C6F178D62BA8B79000817E7B /* CollectCustomerDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D52BA8B79000817E7B /* CollectCustomerDetailsRequest.swift */; };
+		C6F178D82BA8B90700817E7B /* BillingRequestActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */; };
+		C6F178DA2BA8BBDC00817E7B /* GenericRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */; };
+		C6F178DC2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178DB2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift */; };
 		CA972C82F14293DD1AC3924AFE393242 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		CE65BFE9849CFC446A2D2726104F1C1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */; };
 		CEAF50314F4CF1ED64316DDD37CB0D48 /* GoCardlessSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3352DB152F03A0DD8D3AB79071087AFD /* GoCardlessSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -445,6 +449,10 @@
 		C67274509D3CA25B5C0B0B4172A0396F /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		C6AA0DC19DBCFB580C8FBAB7CB4B17E2 /* CwlPosixPreconditionTesting-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CwlPosixPreconditionTesting-umbrella.h"; sourceTree = "<group>"; };
 		C6AAC4A1F5DBA79238B8BDF4EF26449B /* BeginWithPrefix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWithPrefix.swift; path = Sources/Nimble/Matchers/BeginWithPrefix.swift; sourceTree = "<group>"; };
+		C6F178D52BA8B79000817E7B /* CollectCustomerDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectCustomerDetailsRequest.swift; sourceTree = "<group>"; };
+		C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestActionType.swift; sourceTree = "<group>"; };
+		C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRequest.swift; sourceTree = "<group>"; };
+		C6F178DB2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPayerDetailsRequest.swift; sourceTree = "<group>"; };
 		C93311ECD0D6CA5111EFF160DFEAB0C1 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		C940E18CEAC9A77EBDB4C0808DA4736F /* iOSSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
 		CACA8F248044B4150F21DEFBF9274556 /* HttpHeaderProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpHeaderProvider.swift; sourceTree = "<group>"; };
@@ -694,6 +702,7 @@
 		5674D934CD692307E98A5E06E5D76EC4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2EF3F41FBDBF96077E8ED6C607A581C8 /* Endpoint.swift */,
 				78918B7CD37EA89A472075C425013356 /* APIError.swift */,
 				06B91665154AC70B12CDCC021F01707D /* HttpClient.swift */,
 				CACA8F248044B4150F21DEFBF9274556 /* HttpHeaderProvider.swift */,
@@ -747,7 +756,6 @@
 				1AC505FB1C429EC61450ED75D451E4B4 /* CollectCustomerDetails.swift */,
 				19E76F6357872E0E06B0240CB9F1442E /* Customer.swift */,
 				068DFD4C4A472725A99172474F8652FF /* CustomerBillingDetail.swift */,
-				2EF3F41FBDBF96077E8ED6C607A581C8 /* Endpoint.swift */,
 				3F15717FBFDD4B1547629A6291BDD0D9 /* Environment.swift */,
 				2A86C381C05913CAFDD17AA057EF2B09 /* Links.swift */,
 				6BE486E5AC844C692BAC8C1DFE99D875 /* MandateRequest.swift */,
@@ -761,6 +769,10 @@
 				C64FFA192B9FCF0900CCD674 /* MerchantContactDetails.swift */,
 				C64FFA1B2B9FCF2100CCD674 /* SchemeIdentifier.swift */,
 				C64FFA1D2B9FCFFF00CCD674 /* CollectBankAccount.swift */,
+				C6F178D52BA8B79000817E7B /* CollectCustomerDetailsRequest.swift */,
+				C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */,
+				C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */,
+				C6F178DB2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift */,
 			);
 			name = Model;
 			path = GoCardlessSDK/Classes/Model;
@@ -1522,6 +1534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9976F12796161ABAC24DB0C7CFD638F1 /* Action.swift in Sources */,
+				C6F178DA2BA8BBDC00817E7B /* GenericRequest.swift in Sources */,
 				1E8EF7822B0EA757A9D059A0C27041F4 /* APIError.swift in Sources */,
 				71EF5E0259994BC5E80EA5062B19C6C1 /* BankAuthorisation.swift in Sources */,
 				FD8B2F9E9AB5E96F0B895C240FB457CC /* BillingRequest.swift in Sources */,
@@ -1543,14 +1556,17 @@
 				48DECE6B71C19E42C8F3EEE49BA9D204 /* GoCardlessSDK.swift in Sources */,
 				C64FFA182B9FCEE600CCD674 /* Config.swift in Sources */,
 				918A93321B7345756722D5A822C3D5A9 /* GoCardlessSDK-dummy.m in Sources */,
+				C6F178D62BA8B79000817E7B /* CollectCustomerDetailsRequest.swift in Sources */,
 				E0D727939165481D1301B5BB96F2CE5C /* HttpClient.swift in Sources */,
 				827C4ED5C5A490D7587FF91CCD8F6031 /* HttpHeaderProvider.swift in Sources */,
+				C6F178DC2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift in Sources */,
 				20D6B6647ADD62D4AB90C99A7678E2E0 /* Injectable.swift in Sources */,
 				A71E8EBA5051BB6A4A05BAEA0494BEF5 /* Links.swift in Sources */,
 				29C260196BDA0CCB983A9403550D04F4 /* MandateRequest.swift in Sources */,
 				17C573AAC7770ADAEA5C7A9A15B1C26E /* MetaData.swift in Sources */,
 				A92479DD0928A08385EBEF28E0551E99 /* PaymentRequest.swift in Sources */,
 				C64FFA1C2B9FCF2100CCD674 /* SchemeIdentifier.swift in Sources */,
+				C6F178D82BA8B90700817E7B /* BillingRequestActionType.swift in Sources */,
 				824DFC937392D7B0B6A992688AA0E5A1 /* Remove.swift in Sources */,
 				09EF63E3108C6A7D787C182EEDCA4B37 /* Resources.swift in Sources */,
 			);
