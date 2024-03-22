@@ -1,0 +1,16 @@
+{
+  "error": {
+    "message": "Invalid document structure",
+    "errors": [
+      {
+        "field": "links",
+        "message": "\"billing_request\" wasn't supplied.",
+        "request_pointer": "/billing_request_flows/links"
+      }
+    ],
+    "documentation_url": "https://developer.gocardless.com/api-reference#invalid_document_structure",
+    "type": "invalid_api_usage",
+    "request_id": "23BF10A796B4_0A14944D1F92_65EF6E25_831F0001",
+    "code": 400
+  }
+}

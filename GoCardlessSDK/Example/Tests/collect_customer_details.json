@@ -1,0 +1,168 @@
+{
+  "billing_requests": {
+    "id": "BRQ00019RM2676C",
+    "created_at": "2022-11-01T16:26:39.028Z",
+    "status": "pending",
+    "mandate_request": {
+      "currency": "GBP",
+      "scheme": "bacs",
+      "verify": "recommended",
+      "links": {},
+      "metadata": {
+        "key": "value"
+      },
+      "payer_requested_dual_signature": false
+    },
+    "payment_request": {
+      "description": "Unbranded Frozen Shirt",
+      "currency": "GBP",
+      "amount": 53529,
+      "min_amount": null,
+      "max_amount": null,
+      "default_min_amount": null,
+      "default_max_amount": null,
+      "app_fee": null,
+      "scheme": "faster_payments",
+      "links": {},
+      "metadata": {
+        "key": "value"
+      },
+      "flexible_amount": false
+    },
+    "metadata": {
+      "test": "BR548"
+    },
+    "links": {
+      "customer": "CU000Q8VPX2FMQ",
+      "customer_billing_detail": "CBD000834K0VWFT",
+      "creditor": "CR00004PQYSR68",
+      "organisation": "OR000036YNWF31",
+      "payment_request": "PRQ0000AD6J2783",
+      "mandate_request": "MRQ00013Q5JH9Z6"
+    },
+    "fallback_enabled": false,
+    "fallback_occurred": false,
+    "sign_flow_url": null,
+    "creditor_name": "Enterprise Solutions",
+    "actions": [
+      {
+        "type": "choose_currency",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [],
+        "status": "completed",
+        "available_currencies": [
+          "USD",
+          "SEK",
+          "GBP",
+          "AUD",
+          "NZD",
+          "DKK",
+          "CAD",
+          "EUR"
+        ]
+      },
+      {
+        "type": "collect_amount",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [],
+        "status": "completed"
+      },
+      {
+        "type": "collect_customer_details",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [
+          "choose_currency",
+          "collect_amount"
+        ],
+        "status": "completed",
+        "collect_customer_details": {
+          "incomplete_fields": {
+            "customer": [],
+            "customer_billing_detail": []
+          },
+          "default_country_code": "GB"
+        }
+      },
+      {
+        "type": "select_institution",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [],
+        "status": "pending"
+      },
+      {
+        "type": "collect_bank_account",
+        "required": true,
+        "completes_actions": [
+          "choose_currency"
+        ],
+        "available_country_codes": [
+          "GB"
+        ],
+        "requires_actions": [
+          "collect_amount"
+        ],
+        "status": "pending"
+      },
+      {
+        "type": "confirm_payer_details",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [
+          "collect_customer_details",
+          "collect_bank_account"
+        ],
+        "status": "pending"
+      },
+      {
+        "type": "bank_authorisation",
+        "required": true,
+        "completes_actions": [],
+        "requires_actions": [
+          "select_institution"
+        ],
+        "status": "pending",
+        "bank_authorisation": {
+          "authorisation_type": "payment",
+          "requires_institution": true,
+          "direct_to_institution": true,
+          "adapter": "open_banking_gateway_pis"
+        }
+      }
+    ],
+    "resources": {
+      "customer": {
+        "id": "CU000Q8VPX2FMQ",
+        "created_at": "2022-11-01T16:26:38.988Z",
+        "email": "monica.hodkiewicz40@example.org",
+        "given_name": "Howell",
+        "family_name": "Murazik",
+        "company_name": "Trantow Group",
+        "language": "en",
+        "phone_number": "+1 617-555-1212",
+        "metadata": {
+          "example_uuid": "371cfa3e-ba43-431c-96b9-fc04a479ab37"
+        }
+      },
+      "customer_billing_detail": {
+        "id": "CBD000834K0VWFT",
+        "created_at": "2022-11-01T16:26:39.014Z",
+        "address_line1": "1350 Dare Port",
+        "address_line2": null,
+        "address_line3": null,
+        "city": "Julianaport",
+        "region": null,
+        "postal_code": "E8 3GX",
+        "country_code": "GB",
+        "swedish_identity_number": null,
+        "danish_identity_number": null
+      }
+    },
+    "experimentation": {
+      "is_eligible_for_share_of_wallet_experiments": false
+    }
+  }
+}
