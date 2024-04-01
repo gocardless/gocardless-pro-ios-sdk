@@ -12,12 +12,12 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* BillingRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* BillingRequestTests.swift */; };
+		607FACEC1AFB9204008FA782 /* BillingRequestServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */; };
 		BB7E4AED3D51B8CAFC75D27D /* Pods_GoCardlessSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8507F839835DB76BB56CC /* Pods_GoCardlessSDK_Example.framework */; };
 		C64FFA0E2B9FC31700CCD674 /* billing_request_direct_debit_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */; };
 		C64FFA112B9FCCF400CCD674 /* billing_request_payment_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */; };
 		C64FFA122B9FCCF400CCD674 /* billing_request_dual_flow.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA102B9FCCF400CCD674 /* billing_request_dual_flow.json */; };
-		C64FFA202B9FD24F00CCD674 /* BillingRequestFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */; };
+		C64FFA202B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift */; };
 		C64FFA222B9FD3D600CCD674 /* billing_request_flow_success.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA212B9FD3D500CCD674 /* billing_request_flow_success.json */; };
 		C64FFA242B9FD5CD00CCD674 /* billing_request_flow_error.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA232B9FD5CD00CCD674 /* billing_request_flow_error.json */; };
 		C6598EF82B63BC7600FF7818 /* CustomerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6598EF72B63BC7600FF7818 /* CustomerDetailView.swift */; };
@@ -34,6 +34,8 @@
 		C69120AF2B61D67A000A2241 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120AE2B61D67A000A2241 /* ExampleApp.swift */; };
 		C69120B22B61D723000A2241 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120B12B61D723000A2241 /* MainView.swift */; };
 		C69120BC2B626235000A2241 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120BB2B626235000A2241 /* MainViewModel.swift */; };
+		C6ED73F22BBAB11900240DDA /* PaymentServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73F12BBAB11900240DDA /* PaymentServiceTests.swift */; };
+		C6ED73F42BBAB21F00240DDA /* payment_success.json in Resources */ = {isa = PBXBuildFile; fileRef = C6ED73F32BBAB21F00240DDA /* payment_success.json */; };
 		C6F178DE2BAA225C00817E7B /* collect_bank_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178DD2BAA045400817E7B /* collect_bank_account.json */; };
 		C6F178E02BAA2C1F00817E7B /* collect_customer_details.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178DF2BAA2C1F00817E7B /* collect_customer_details.json */; };
 		C6F178E22BAA958E00817E7B /* action_fulfil.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178E12BAA958E00817E7B /* action_fulfil.json */; };
@@ -63,7 +65,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GoCardlessSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCardlessSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* BillingRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestTests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestServiceTests.swift; sourceTree = "<group>"; };
 		8072F45D48267AE4CEBACFD3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8C23C4B47A35EA2E776F8F25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9EA55D13E1CFC9630FF45C88 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCardlessSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_direct_debit_only.json; sourceTree = "<group>"; };
 		C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_payment_only.json; sourceTree = "<group>"; };
 		C64FFA102B9FCCF400CCD674 /* billing_request_dual_flow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_dual_flow.json; sourceTree = "<group>"; };
-		C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestFlowTests.swift; sourceTree = "<group>"; };
+		C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestFlowServiceTests.swift; sourceTree = "<group>"; };
 		C64FFA212B9FD3D500CCD674 /* billing_request_flow_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_flow_success.json; sourceTree = "<group>"; };
 		C64FFA232B9FD5CD00CCD674 /* billing_request_flow_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billing_request_flow_error.json; sourceTree = "<group>"; };
 		C6598EF72B63BC7600FF7818 /* CustomerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		C69120AE2B61D67A000A2241 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		C69120B12B61D723000A2241 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C69120BB2B626235000A2241 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C6ED73F12BBAB11900240DDA /* PaymentServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentServiceTests.swift; sourceTree = "<group>"; };
+		C6ED73F32BBAB21F00240DDA /* payment_success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = payment_success.json; sourceTree = "<group>"; };
 		C6F178DD2BAA045400817E7B /* collect_bank_account.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = collect_bank_account.json; sourceTree = "<group>"; };
 		C6F178DF2BAA2C1F00817E7B /* collect_customer_details.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = collect_customer_details.json; sourceTree = "<group>"; };
 		C6F178E12BAA958E00817E7B /* action_fulfil.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = action_fulfil.json; sourceTree = "<group>"; };
@@ -175,9 +179,10 @@
 			children = (
 				C68EDC6F2B96AB1700C7D3AF /* Util */,
 				C68EDC5C2B96A26F00C7D3AF /* Resources */,
-				607FACEB1AFB9204008FA782 /* BillingRequestTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowTests.swift */,
+				607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */,
+				C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift */,
+				C6ED73F12BBAB11900240DDA /* PaymentServiceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				C6F178E12BAA958E00817E7B /* action_fulfil.json */,
 				C6F178E32BAA986700817E7B /* action_cancel.json */,
 				C6F178E52BAA98FC00817E7B /* action_notify.json */,
+				C6ED73F32BBAB21F00240DDA /* payment_success.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				C64FFA112B9FCCF400CCD674 /* billing_request_payment_only.json in Resources */,
 				C68EDC6C2B96A2B100C7D3AF /* billing_request_success_unknown.json in Resources */,
 				C68EDC6A2B96A2B100C7D3AF /* billing_request_error_malformed.json in Resources */,
+				C6ED73F42BBAB21F00240DDA /* payment_success.json in Resources */,
 				C6F178E62BAA98FC00817E7B /* action_notify.json in Resources */,
 				C64FFA122B9FCCF400CCD674 /* billing_request_dual_flow.json in Resources */,
 				C68EDC642B96A2B000C7D3AF /* billing_request_error.json in Resources */,
@@ -517,10 +524,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64FFA202B9FD24F00CCD674 /* BillingRequestFlowTests.swift in Sources */,
+				C64FFA202B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift in Sources */,
 				C68EDC752B96B6FA00C7D3AF /* TestFileManager.swift in Sources */,
-				607FACEC1AFB9204008FA782 /* BillingRequestTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* BillingRequestServiceTests.swift in Sources */,
 				C68EDC722B96AB3000C7D3AF /* URLProtocolStub.swift in Sources */,
+				C6ED73F22BBAB11900240DDA /* PaymentServiceTests.swift in Sources */,
 				C68EDC782B971D2800C7D3AF /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,8 @@ enum Endpoint {
     case customerList
     case customerRemove(customerId: String)
     case billingRequestCreate(body: BillingRequestWrapper)
+    case billingRequestGet(billingRequestId: String)
+    case billingRequestList
     case billingRequestFlowCreate(body: BillingRequestFlowWrapper)
     case actionCollectCustomerDetails(billingRequestId: String, body: GenericRequest<CollectCustomerDetailsRequest>)
     case actionCollectBankAccount(billingRequestId: String, body: GenericRequest<CollectBankAccount>)
@@ -19,15 +21,21 @@ enum Endpoint {
     case actionFulfil(billingRequestId: String, body: GenericRequest<Metadata>?)
     case actionCancel(billingRequestId: String, body: GenericRequest<Metadata>?)
     case actionNotify(billingRequestId: String, body: GenericRequest<Metadata>?)
+    case paymentCreate(payment: PaymentWrapper)
+    case paymentGet(paymentId: String)
     
     /// The relative URL path associated with each endpoint.
     var path: String {
         switch self {
-        case .customerList: 
+        case .customerList:
             return "/customers"
         case .customerRemove(let customerId):
             return "/customers/\(customerId)"
         case .billingRequestCreate:
+            return "/billing_requests"
+        case .billingRequestGet(let billingRequestId):
+            return "/billing_requests/\(billingRequestId)"
+        case .billingRequestList:
             return "/billing_requests"
         case .billingRequestFlowCreate:
             return "/billing_request_flows"
@@ -43,13 +51,17 @@ enum Endpoint {
             return "/billing_requests/\(billingRequestId)/actions/cancel"
         case .actionNotify(let billingRequestId, _):
             return "/billing_requests/\(billingRequestId)/actions/notify"
+        case .paymentCreate(_):
+            return "/payments"
+        case .paymentGet(let paymentId):
+            return "/payments/\(paymentId)"
         }
     }
     
     /// The HTTP method associated with each endpoint.
     var method: String {
         switch self {
-        case .customerList: 
+        case .customerList, .billingRequestGet, .billingRequestList, .paymentGet:
             return "GET"
         case .customerRemove:
             return "DELETE"
@@ -58,7 +70,7 @@ enum Endpoint {
         }
     }
     
-    /// Body of the HTTP request
+    /// Body of the HTTP request in the `Encodable` format
     var body: Encodable? {
         switch self {
         case .billingRequestCreate(let body): return body
@@ -66,6 +78,7 @@ enum Endpoint {
         case .actionCollectCustomerDetails(_, let body): return body
         case .actionCollectBankAccount(_, let body): return body
         case .actionConfirmPayerDetails(_, let body): return body
+        case .paymentCreate(let body): return body
         default: return nil
         }
     }

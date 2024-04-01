@@ -200,7 +200,7 @@ class BillingRequestTests: XCTestCase {
         let data = CollectCustomerDetailsRequest()
         let endpoint = Endpoint.actionCollectCustomerDetails(billingRequestId: billingRequestId,
                                                              body: GenericRequest(data: data))
-        print(" test: \(endpoint.path)")
+        
         URLProtocolStub.successStub(endpoint: endpoint, fileName: "collect_customer_details")
         let expectation = XCTestExpectation(description: "HttpClient request")
         var result: BillingRequest? = nil
@@ -342,7 +342,7 @@ class BillingRequestTests: XCTestCase {
     
     func test_billing_request_action_notify() {
         // Given
-        let billingRequestId = "BRQ0005QQ30QYJE"
+        let billingRequestId = "BRQ0005XPF8YSR1"
         var metadata = Metadata()
         metadata["name"] = "Investment Account"
         let endpoint = Endpoint.actionFulfil(billingRequestId: billingRequestId, body: nil)
@@ -369,6 +369,6 @@ class BillingRequestTests: XCTestCase {
         // Then
         expect(result?.id).to(equal(billingRequestId))
         expect(result?.status).to(equal(BillingRequestStatus.pending))
-        expect(result?.actions?.count).to(equal(7))
+        expect(result?.actions?.count).to(equal(6))
     }
 }

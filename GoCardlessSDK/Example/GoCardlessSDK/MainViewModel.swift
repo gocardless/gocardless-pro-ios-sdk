@@ -49,21 +49,21 @@ class MainViewModel: ObservableObject {
         
         let allCustomers = customerService.all()
         
-        customerService.delete(customerId: customer.id ?? "")
-            .receive(on: DispatchQueue.main)
-            .flatMap({ _ in
-                allCustomers
-            })
-            .sink(receiveCompletion: { (completion) in
-                    switch completion {
-                    case let .failure(error):
-                        print("Couldn't get users: \(error)")
-                        self.state = .error
-                    case .finished: break
-                    }
-                }) { customers in
-                    self.state = .success(customers: customers)
-                }
-                .store(in: &subscriptions)
+//        customerService.delete(customerId: customer.id ?? "")
+//            .receive(on: DispatchQueue.main)
+//            .flatMap({ _ in
+//                allCustomers
+//            })
+//            .sink(receiveCompletion: { (completion) in
+//                    switch completion {
+//                    case let .failure(error):
+//                        print("Couldn't get users: \(error)")
+//                        self.state = .error
+//                    case .finished: break
+//                    }
+//                }) { customers in
+//                    self.state = .success(customers: customers)
+//                }
+//                .store(in: &subscriptions)
     }
 }

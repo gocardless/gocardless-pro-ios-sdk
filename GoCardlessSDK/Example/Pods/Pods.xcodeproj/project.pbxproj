@@ -139,6 +139,9 @@
 		C64FFA1C2B9FCF2100CCD674 /* SchemeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1B2B9FCF2100CCD674 /* SchemeIdentifier.swift */; };
 		C64FFA1E2B9FCFFF00CCD674 /* CollectBankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA1D2B9FCFFF00CCD674 /* CollectBankAccount.swift */; };
 		C64FFA272B9FDF0D00CCD674 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FFA262B9FDF0D00CCD674 /* Errors.swift */; };
+		C6ED73EC2BBAA96500240DDA /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73EB2BBAA96500240DDA /* PaymentService.swift */; };
+		C6ED73EE2BBAA9D300240DDA /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73ED2BBAA9D300240DDA /* Payment.swift */; };
+		C6ED73F02BBAAFE000240DDA /* PaymentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73EF2BBAAFE000240DDA /* PaymentWrapper.swift */; };
 		C6F178D62BA8B79000817E7B /* CollectCustomerDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D52BA8B79000817E7B /* CollectCustomerDetailsRequest.swift */; };
 		C6F178D82BA8B90700817E7B /* BillingRequestActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */; };
 		C6F178DA2BA8BBDC00817E7B /* GenericRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */; };
@@ -449,6 +452,9 @@
 		C67274509D3CA25B5C0B0B4172A0396F /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		C6AA0DC19DBCFB580C8FBAB7CB4B17E2 /* CwlPosixPreconditionTesting-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CwlPosixPreconditionTesting-umbrella.h"; sourceTree = "<group>"; };
 		C6AAC4A1F5DBA79238B8BDF4EF26449B /* BeginWithPrefix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWithPrefix.swift; path = Sources/Nimble/Matchers/BeginWithPrefix.swift; sourceTree = "<group>"; };
+		C6ED73EB2BBAA96500240DDA /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		C6ED73ED2BBAA9D300240DDA /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		C6ED73EF2BBAAFE000240DDA /* PaymentWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWrapper.swift; sourceTree = "<group>"; };
 		C6F178D52BA8B79000817E7B /* CollectCustomerDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectCustomerDetailsRequest.swift; sourceTree = "<group>"; };
 		C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestActionType.swift; sourceTree = "<group>"; };
 		C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRequest.swift; sourceTree = "<group>"; };
@@ -702,6 +708,7 @@
 		5674D934CD692307E98A5E06E5D76EC4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3F15717FBFDD4B1547629A6291BDD0D9 /* Environment.swift */,
 				2EF3F41FBDBF96077E8ED6C607A581C8 /* Endpoint.swift */,
 				78918B7CD37EA89A472075C425013356 /* APIError.swift */,
 				06B91665154AC70B12CDCC021F01707D /* HttpClient.swift */,
@@ -756,7 +763,6 @@
 				1AC505FB1C429EC61450ED75D451E4B4 /* CollectCustomerDetails.swift */,
 				19E76F6357872E0E06B0240CB9F1442E /* Customer.swift */,
 				068DFD4C4A472725A99172474F8652FF /* CustomerBillingDetail.swift */,
-				3F15717FBFDD4B1547629A6291BDD0D9 /* Environment.swift */,
 				2A86C381C05913CAFDD17AA057EF2B09 /* Links.swift */,
 				6BE486E5AC844C692BAC8C1DFE99D875 /* MandateRequest.swift */,
 				FDEDC76E168D0BF0CA24BFFFD2F3DA94 /* MetaData.swift */,
@@ -773,6 +779,8 @@
 				C6F178D72BA8B90700817E7B /* BillingRequestActionType.swift */,
 				C6F178D92BA8BBDC00817E7B /* GenericRequest.swift */,
 				C6F178DB2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift */,
+				C6ED73ED2BBAA9D300240DDA /* Payment.swift */,
+				C6ED73EF2BBAAFE000240DDA /* PaymentWrapper.swift */,
 			);
 			name = Model;
 			path = GoCardlessSDK/Classes/Model;
@@ -823,6 +831,7 @@
 				14064D210A8F60FF68D8A7D4DA836A6E /* BillingRequestFlowService.swift */,
 				363773D451138029B767291989246311 /* BillingRequestService.swift */,
 				79FE6357C90CF128F153461938DC8BD8 /* CustomerService.swift */,
+				C6ED73EB2BBAA96500240DDA /* PaymentService.swift */,
 			);
 			name = Services;
 			path = GoCardlessSDK/Classes/Services;
@@ -1533,6 +1542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6ED73EC2BBAA96500240DDA /* PaymentService.swift in Sources */,
 				9976F12796161ABAC24DB0C7CFD638F1 /* Action.swift in Sources */,
 				C6F178DA2BA8BBDC00817E7B /* GenericRequest.swift in Sources */,
 				1E8EF7822B0EA757A9D059A0C27041F4 /* APIError.swift in Sources */,
@@ -1548,6 +1558,7 @@
 				96A214650BDB29BE26FFF12091086061 /* Customer.swift in Sources */,
 				EDDD0F4A287391F871373EBCE739B051 /* CustomerBillingDetail.swift in Sources */,
 				C64FFA162B9FCEAC00CCD674 /* BillingRequestFlow.swift in Sources */,
+				C6ED73EE2BBAA9D300240DDA /* Payment.swift in Sources */,
 				0DBF198579F3F11CDB3737FB71B209AC /* CustomerService.swift in Sources */,
 				C64FFA142B9FCE7900CCD674 /* BillingRequestFlowWrapper.swift in Sources */,
 				6C9F17FC96F542BB43963E794596C91D /* DependencyContainer.swift in Sources */,
@@ -1562,6 +1573,7 @@
 				C6F178DC2BA9794000817E7B /* ConfirmPayerDetailsRequest.swift in Sources */,
 				20D6B6647ADD62D4AB90C99A7678E2E0 /* Injectable.swift in Sources */,
 				A71E8EBA5051BB6A4A05BAEA0494BEF5 /* Links.swift in Sources */,
+				C6ED73F02BBAAFE000240DDA /* PaymentWrapper.swift in Sources */,
 				29C260196BDA0CCB983A9403550D04F4 /* MandateRequest.swift in Sources */,
 				17C573AAC7770ADAEA5C7A9A15B1C26E /* MetaData.swift in Sources */,
 				A92479DD0928A08385EBEF28E0551E99 /* PaymentRequest.swift in Sources */,

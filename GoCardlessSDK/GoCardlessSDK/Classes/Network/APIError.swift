@@ -7,7 +7,7 @@
 
 
 /// Represents different API errors that can occur during network requests.
-enum APIError: Error {
+public enum APIError: Error {
     /// Represents an error that occurs when user credentials/api key provided is invalid.
     case authenticationError
     /// Represents an error that occurs when user is not permitted to do desired action.
@@ -22,4 +22,6 @@ enum APIError: Error {
     case invalidStateError
     /// Represents an error that occurs when the parameters submitted with your request were invalid.
     case validationFailedError
+    /// Represents an error that occurs when a response is returned from the API which isn't valid JSON (for example, an HTML error page returned from a load balancer)
+    case malformedResponseError
 }

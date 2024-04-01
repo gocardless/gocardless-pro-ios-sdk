@@ -25,7 +25,7 @@ public class CustomerService {
             .eraseToAnyPublisher()
     }
     
-    public func delete(customerId: String) -> AnyPublisher<Data, Error> {
+    public func delete(customerId: String) -> AnyPublisher<Data, APIError> {
         print(" CustomerService > delete" )
         let endpoint = Endpoint.customerRemove(customerId: customerId)
         

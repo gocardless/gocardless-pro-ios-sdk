@@ -49,13 +49,20 @@ public class BillingRequestService {
      - Parameter collectCustomerDetails Customer and their billing details
      */
     public func collectCustomerDetails(billingRequestId: String,
-                                       collectCustomerDetails: CollectCustomerDetailsRequest) -> AnyPublisher<BillingRequest, Error> {
+                                       collectCustomerDetails: CollectCustomerDetailsRequest) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionCollectCustomerDetails(billingRequestId: billingRequestId,
                                                              body: GenericRequest(data: collectCustomerDetails))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapError { error in
+                if let apiError = error as? APIError {
+                    return apiError
+                } else {
+                    return APIError.malformedResponseError
+                }
+            }
             .eraseToAnyPublisher()
     }
     
@@ -74,9 +81,9 @@ public class BillingRequestService {
      */
     public func collectBankAccount(billingRequestId: String,
                                    collectBankAccount: CollectBankAccount) -> AnyPublisher<BillingRequest, Error> {
-        let endpoint = Endpoint.actionCollectBankAccount(billingRequestId: billingRequestId, 
+        let endpoint = Endpoint.actionCollectBankAccount(billingRequestId: billingRequestId,
                                                          body: GenericRequest(data: collectBankAccount))
-
+        
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
@@ -92,9 +99,9 @@ public class BillingRequestService {
      */
     public func confirmPayerDetails(billingRequestId: String,
                                     confirmPayerDetailsRequest: ConfirmPayerDetailsRequest) -> AnyPublisher<BillingRequest, Error> {
-        let endpoint = Endpoint.actionConfirmPayerDetails(billingRequestId: billingRequestId, 
+        let endpoint = Endpoint.actionConfirmPayerDetails(billingRequestId: billingRequestId,
                                                           body: GenericRequest(data: confirmPayerDetailsRequest))
-
+        
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
@@ -110,7 +117,7 @@ public class BillingRequestService {
      */
     public func fulfil(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
         let endpoint = Endpoint.actionFulfil(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
-
+        
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
@@ -125,7 +132,7 @@ public class BillingRequestService {
      */
     public func cancel(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
         let endpoint = Endpoint.actionCancel(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
-
+        
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
@@ -143,10 +150,35 @@ public class BillingRequestService {
      */
     public func notify(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
         let endpoint = Endpoint.actionNotify(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
-
+        
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .eraseToAnyPublisher()
+    }
+    
+    /**
+     Fetches a billing request
+     
+     - Parameter billingRequestId: The Billing Request Id to request the details
+     */
+    public func getBillingRequest(billingRequestId: String) -> AnyPublisher<BillingRequest, Error> {
+        let endpoint = Endpoint.billingRequestGet(billingRequestId: billingRequestId)
+        
+        return httpClient.request(endpoint: endpoint)
+            .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
+            .map { $0.billingRequests ?? BillingRequest() }
+            .eraseToAnyPublisher()
+    }
+    
+    /**
+     Returns a cursor-paginated list of your billing requests.
+     */
+    public func listBillingRequests() -> AnyPublisher<BillingRequestList, Error> {
+        let endpoint = Endpoint.billingRequestList
+        
+        return httpClient.request(endpoint: endpoint)
+            .decode(type: BillingRequestList.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 }

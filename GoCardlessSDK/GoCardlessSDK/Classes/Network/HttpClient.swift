@@ -21,7 +21,7 @@ class HttpClient {
         self.urlSession = urlSession
     }
     
-    func request(endpoint: Endpoint) -> AnyPublisher<Data, Error> {
+    func request(endpoint: Endpoint) -> AnyPublisher<Data, APIError> {
         var request = URLRequest(environemnt: envrionment, endpoint: endpoint)
             .setHeaders(provider: httpHeaderProvider)
         
@@ -58,6 +58,13 @@ class HttpClient {
                     }
                 }
                 return data
+            }
+            .mapError { error in
+                if let apiError = error as? APIError {
+                    return apiError
+                } else {
+                    return APIError.malformedResponseError
+                }
             }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
