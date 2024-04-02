@@ -1,21 +1,21 @@
 PODS:
-  - CwlCatchException (2.1.2):
-    - CwlCatchExceptionSupport (~> 2.1.2)
-  - CwlCatchExceptionSupport (2.1.2)
-  - CwlMachBadInstructionHandler (2.1.2)
-  - CwlPosixPreconditionTesting (2.1.2)
-  - CwlPreconditionTesting (2.1.2):
-    - CwlCatchException (~> 2.1.2)
-    - CwlMachBadInstructionHandler (~> 2.1.2)
-    - CwlPosixPreconditionTesting (~> 2.1.2)
-  - GoCardlessSDK (0.1.0)
+  - CwlCatchException (2.2.0):
+    - CwlCatchExceptionSupport (~> 2.2.0)
+  - CwlCatchExceptionSupport (2.2.0)
+  - CwlMachBadInstructionHandler (2.2.0)
+  - CwlPosixPreconditionTesting (2.2.0)
+  - CwlPreconditionTesting (2.2.1):
+    - CwlCatchException (~> 2.2.0)
+    - CwlMachBadInstructionHandler (~> 2.2.0)
+    - CwlPosixPreconditionTesting (~> 2.2.0)
+  - GoCardlessSDK (1.0.0)
   - iOSSnapshotTestCase (8.0.0):
     - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
-  - Nimble (13.1.2):
-    - CwlPreconditionTesting (~> 2.1.0)
+  - Nimble (13.2.1):
+    - CwlPreconditionTesting (~> 2.2.0)
 
 DEPENDENCIES:
   - GoCardlessSDK (from `../`)
@@ -37,14 +37,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CwlCatchException: 76542d5ea479c79ce16ddd6e7bc9d42c7ec63300
-  CwlCatchExceptionSupport: 42bf8c5e4e5e663f51100ddfa68caf7cfcf64ab6
-  CwlMachBadInstructionHandler: b982c7e3e44fcfa1c680e8046f6bba35f3476d65
-  CwlPosixPreconditionTesting: 4011f0660c0be460b088d10bcfdf351c7e036ac4
-  CwlPreconditionTesting: 23ed728f2acc2d774fb59101123c943ce0119107
-  GoCardlessSDK: 1c0193b64f29c26a70fabf2768d6411befe3bd13
+  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
+  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
+  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
+  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
+  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
+  GoCardlessSDK: ba88965f799fc3e602e7e7d9ae0fe0f7d9826da1
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
-  Nimble: d733c860d832b324e9779034f12398993c536e7b
+  Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
 
 PODFILE CHECKSUM: 60b1632777fe2da5d509786ca234ee03b0604661
 
