@@ -1,6 +1,5 @@
 # GoCardlessSDK
 
-[![CI Status](https://img.shields.io/travis/Gunhan Sancar/GoCardlessSDK.svg?style=flat)](https://travis-ci.org/Gunhan Sancar/GoCardlessSDK)
 [![Version](https://img.shields.io/cocoapods/v/GoCardlessSDK.svg?style=flat)](https://cocoapods.org/pods/GoCardlessSDK)
 [![License](https://img.shields.io/cocoapods/l/GoCardlessSDK.svg?style=flat)](https://cocoapods.org/pods/GoCardlessSDK)
 [![Platform](https://img.shields.io/cocoapods/p/GoCardlessSDK.svg?style=flat)](https://cocoapods.org/pods/GoCardlessSDK)
