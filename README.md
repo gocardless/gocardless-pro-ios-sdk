@@ -1,56 +1,102 @@
-# Blank Template
+# GoCardless SDK
 
-> TODO: Describe your service here, indicating its purpose and the features it provides.
-> Example: [appetiser](https://github.com/gocardless/appetiser#appetiser)
+The GoCardless iOS SDK is a tool that enables developers to integrate GoCardless payments into their iOS applications. 
+To help developers get started, a sample app has been created that demonstrates how to use the SDK. 
+The app provides a clear and practical example of how to implement GoCardless payments within an iOS app.
 
-## Usage
+## Getting started
 
-> TODO: Describe how you use your service here.
-> Example: [appetiser](https://github.com/gocardless/appetiser#usage)
+GoCardlessSDK is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-## Contributing
+```ruby
+pod 'GoCardlessSDK'
+```
 
-### Structure
+## Initializing the client
 
-> TODO: What's the structure of your code? For example, do you have separate server and client codebases?
->Example: [appetiser](https://github.com/gocardless/appetiser#how-is-appetiser-built)
+The client is initialised with an access token, and is configured to use GoCardless' live environment by default:
 
-### Infrastructure
+```swift
+import GoCardlessSDK
 
-> TODO: What infrastructure does your application depend on and what's the availability of these dependencies.
-> Example: [payment-service](https://github.com/gocardless/payments-service#infrastructure-dependencies)
+GoCardlessSDK.initSDK(accessToken: "YOUR_ACCESS_TOKEN", environment: .live) {
+    print("GoCardless SDK is initialised")
+}
+```
 
-### Monitoring and Alerting
+## Supported Services
+Currently we support the following services and their functions
 
-> TODO: What monitoring and alerting does your application have?
-> Example: [appetiser](https://github.com/gocardless/appetiser#monitoring-and-alerting)
+### Billing Request
+- `createBillingRequest`: Creates a Billing Request, enabling you to collect all types of GoCardless payments
+- `collectCustomerDetails`: If the billing request has a pending collect_customer_details action, this endpoint can be used to collect the details in order to complete it.
+- `collectBankAccount`: If the billing request has a pending collect_bank_account action, this endpoint can be used to collect the details in order to complete it.
+- `confirmPayerDetails`: This is needed when you have a mandate request. As a scheme compliance rule we are required to allow the payer to crosscheck the details entered by them and confirm it.
+- `fulfil`: If a billing request is ready to be fulfilled, call this endpoint to cause it to fulfil, executing the payment.
+- `cancel`: Immediately cancels a billing request, causing all billing request flows to expire.
+- `notify`: Notifies the customer linked to the billing request, asking them to authorise it.
+- `getBillingRequest`: Fetches a billing request
+- `listBillingRequests`: Returns a cursor-paginated list of your billing requests.
+
+### Billing Request Flow
+- `createBillingRequestFlow`: Creates a new billing request flow.
+
+### Payment
+- `createPaymentRequest`: Creates a new payment object.
+- ``
+
+## Examples
+
+Note: To be able to make any request, you must initialise the SDK.
+
+### Fetching List of Billing Requests
+
+Ensure that all requests are made within the correct `Scope` before launching.
+
+```swift
+GoCardlessSDK.shared.billingRequestService.listBillingRequests()
+    .receive(on: DispatchQueue.main)
+    .sink(receiveCompletion: { (completion) in
+        switch completion {
+        case let .failure(error):
+            print("API error: \(error)")
+            self.state = .error
+        case .finished: break
+        }
+    }) { billingRequestList in
+        self.state = .success(billingRequest: billingRequest)
+    }
+    .store(in: &subscriptions)
+```
+
+### Handling Errors
+
+Whenever the API encounters an issue, it returns a `GoCardlessError` or its derivatives to provide more context about the error. Below are the types of errors you may encounter:
+
+- `AuthenticationError`: Indicates an issue with authentication.
+- `GoCardlessInternalError`: Denotes an internal error within the GoCardless system.
+- `InvalidApiUsageError`: Occurs when the API is used incorrectly.
+- `InvalidStateError`: Indicates an invalid state in the system.
+- `MalformedResponseError`: Denotes an issue with the response received from the API.
+- `PermissionError`: Occurs when the user does not have the necessary permissions.
+- `RateLimitError`: Indicates that the rate limit for API requests has been exceeded.
+- `ValidationFailedError`: Denotes a validation failure, usually with user input.
+
+
+## SDK Requirements
+
+### Language
+- **Swift**
+
+### Minimum Deployments
+- **iOS 13**
 
 ### Dependencies
+- **No external libraries**
 
-> TODO: What dependencies do you require to build this service locally (eg. Docker, Ruby)?
-> Example: [appetiser](https://github.com/gocardless/appetiser#dependencies)
+### Threading
+- **Combine**
 
-### Getting started
-
-> TODO: Provide a step-by-step guide to running the service locally from a clean git clone.
-> Example: [appetiser](https://github.com/gocardless/appetiser#getting-started)
-
-### Testing
-
-> TODO: How do you run your service's automated tests?
-> Example: [appetiser](https://github.com/gocardless/appetiser#testing)
-
-### Deployment
-
-> TODO: How is your service deployed?
-> Example: [appetiser](https://github.com/gocardless/appetiser#deployment)
-
-### Configuration and Environment Variables
-
-> TODO: Does your service have any environment variables? If so, what behaviour is governed by their values?
-> Example: [appetiser](https://github.com/gocardless/appetiser#configuration)
-
-## Learning resources
-
-> TODO: Any useful learning resources a developer may want to read regarding your service?
-> Example: [appetiser](https://github.com/gocardless/appetiser#learning-resources)
+### Repository
+- **[GitHub Repository](https://github.com/gocardless/gocardless-pro-ios-sdk)**
