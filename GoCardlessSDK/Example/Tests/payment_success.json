@@ -1,0 +1,25 @@
+{
+  "payments": {
+    "id": "PM009ME5BM6SR3",
+    "created_at": "2024-03-20T11:21:17.631Z",
+    "charge_date": "2024-03-26",
+    "amount": 33197,
+    "description": null,
+    "currency": "GBP",
+    "status": "pending_submission",
+    "amount_refunded": 0,
+    "reference": null,
+    "metadata": {},
+    "fx": {
+      "fx_currency": "GBP",
+      "fx_amount": null,
+      "exchange_rate": null,
+      "estimated_exchange_rate": null
+    },
+    "links": {
+      "mandate": "MD000ZQFRW73MD",
+      "creditor": "CR00007J0CSSJG"
+    },
+    "retry_if_possible": true
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "billing_request_flows": {
+    "id": "BRF0002HJNHHDSCF4F5XEJE61E94AMAX",
+    "auto_fulfil": true,
+    "redirect_uri": "https://gocardless.com/",
+    "exit_uri": "https://developer.gocardless.com/",
+    "authorisation_url": "https://pay-sandbox.gocardless.com/billing/static/flow?id=BRF0002HJNHHDSCF4F5XEJE61E94AMAX",
+    "lock_customer_details": false,
+    "lock_bank_account": false,
+    "session_token": null,
+    "expires_at": "2024-03-18T20:21:45.526Z",
+    "created_at": "2024-03-11T20:21:45.529Z",
+    "links": {
+      "billing_request": "BRQ0005VSWHP5JE"
+    },
+    "config": {
+      "merchant_contact_details": {
+        "email": "cgnhnc@gmail.com",
+        "phone_number": "+44 7774 285188",
+        "name": "GunhanOrg"
+      },
+      "scheme_identifiers": [
+        {
+          "scheme": "bacs",
+          "advance_notice": 3,
+          "name": "GoCardless Ltd",
+          "reference": "275069",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless Ltd",
+          "registered_name": "GoCardless Ltd"
+        },
+        {
+          "scheme": "sepa_core",
+          "advance_notice": 3,
+          "name": "GoCardless",
+          "reference": "GB27ZZZSDDBARC0000007495895",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "autogiro",
+          "advance_notice": 8,
+          "name": "GoCardless",
+          "reference": "3171634",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "becs",
+          "advance_notice": 0,
+          "name": "GoCardless",
+          "reference": "488299",
+          "address": "Level 9, 401 Collins Street, Melbourne, VIC 3000, AU",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "betalingsservice",
+          "advance_notice": 6,
+          "name": "GoCardless",
+          "reference": "09025677",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "becs_nz",
+          "advance_notice": 2,
+          "name": "GoCardless",
+          "reference": "1220559",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "pad",
+          "advance_notice": 3,
+          "name": "GoCardless",
+          "reference": "2185310000",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "ach",
+          "advance_notice": 1,
+          "name": "GoCardless",
+          "reference": "00000000",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "faster_payments",
+          "advance_notice": 0,
+          "name": "GoCardless",
+          "reference": "000000",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "sepa_credit_transfer",
+          "advance_notice": 0,
+          "name": "GoCardless",
+          "reference": "00000000",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "sepa_instant_credit_transfer",
+          "advance_notice": 0,
+          "name": "GoCardless",
+          "reference": "00000000",
+          "address": "Sutton Yard, 65 Goswell Road, London, EC1V 7EN, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        },
+        {
+          "scheme": "pay_to",
+          "advance_notice": 0,
+          "name": "GoCardless",
+          "reference": "00000000",
+          "address": "338-346 Goswell Road, London, EC1V 7LQ, GB",
+          "bank_statement_name": "GoCardless",
+          "registered_name": "GoCardless"
+        }
+      ]
+    },
+    "redirect_flow_id": null,
+    "show_redirect_buttons": true,
+    "lock_currency": true,
+    "prefilled_customer": null,
+    "prefilled_bank_account": null,
+    "language": null,
+    "show_success_redirect_button": false,
+    "customer_details_captured": false,
+    "redirect_origin": null
+  }
+}

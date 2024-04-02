@@ -1,0 +1,51 @@
+PODS:
+  - CwlCatchException (2.2.0):
+    - CwlCatchExceptionSupport (~> 2.2.0)
+  - CwlCatchExceptionSupport (2.2.0)
+  - CwlMachBadInstructionHandler (2.2.0)
+  - CwlPosixPreconditionTesting (2.2.0)
+  - CwlPreconditionTesting (2.2.1):
+    - CwlCatchException (~> 2.2.0)
+    - CwlMachBadInstructionHandler (~> 2.2.0)
+    - CwlPosixPreconditionTesting (~> 2.2.0)
+  - GoCardlessSDK (1.0.0)
+  - iOSSnapshotTestCase (8.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
+  - iOSSnapshotTestCase/Core (8.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (8.0.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (13.2.1):
+    - CwlPreconditionTesting (~> 2.2.0)
+
+DEPENDENCIES:
+  - GoCardlessSDK (from `../`)
+  - iOSSnapshotTestCase (~> 8.0.0)
+  - Nimble (~> 13)
+
+SPEC REPOS:
+  trunk:
+    - CwlCatchException
+    - CwlCatchExceptionSupport
+    - CwlMachBadInstructionHandler
+    - CwlPosixPreconditionTesting
+    - CwlPreconditionTesting
+    - iOSSnapshotTestCase
+    - Nimble
+
+EXTERNAL SOURCES:
+  GoCardlessSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
+  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
+  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
+  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
+  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
+  GoCardlessSDK: ba88965f799fc3e602e7e7d9ae0fe0f7d9826da1
+  iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+  Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
+
+PODFILE CHECKSUM: 60b1632777fe2da5d509786ca234ee03b0604661
+
+COCOAPODS: 1.12.0

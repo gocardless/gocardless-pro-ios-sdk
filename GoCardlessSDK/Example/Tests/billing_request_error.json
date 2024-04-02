@@ -1,0 +1,15 @@
+{
+  "error": {
+    "message": "The body of your request could not be parsed. Please check it contains valid JSON. You may wish to use an online tool such as http://jsonlint.com/ to do so.",
+    "errors": [
+      {
+        "reason": "bad_request",
+        "message": "The body of your request could not be parsed. Please check it contains valid JSON. You may wish to use an online tool such as http://jsonlint.com/ to do so."
+      }
+    ],
+    "documentation_url": "https://developer.gocardless.com/api-reference#bad_request",
+    "type": "invalid_api_usage",
+    "request_id": "23BF1970A630_0A148A3D1F92_65DCB61A_10050001",
+    "code": 400
+  }
+}
