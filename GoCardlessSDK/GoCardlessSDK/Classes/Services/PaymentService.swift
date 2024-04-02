@@ -27,12 +27,13 @@ public class PaymentService {
      
      - Parameter payment: The Payment Request to create.
      */
-    public func createPayment(payment: Payment) -> AnyPublisher<Payment, Error> {
+    public func createPayment(payment: Payment) -> AnyPublisher<Payment, APIError> {
         let endpoint = Endpoint.paymentCreate(payment: PaymentWrapper(payments: payment))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: PaymentWrapper.self, decoder: JSONDecoder())
             .map { $0.payments ?? payment }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -47,13 +48,7 @@ public class PaymentService {
         return httpClient.request(endpoint: endpoint)
             .decode(type: PaymentWrapper.self, decoder: JSONDecoder())
             .map { $0.payments ?? Payment() }
-            .mapError { error in
-                if let apiError = error as? APIError {
-                    return apiError
-                } else {
-                    return APIError.malformedResponseError
-                }
-            }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
 }

@@ -26,12 +26,13 @@ public class BillingRequestService {
      
      - Parameter billingRequest: The Billing Request to create.
      */
-    public func createBillingRequest(billingRequest: BillingRequest) -> AnyPublisher<BillingRequest, Error> {
+    public func createBillingRequest(billingRequest: BillingRequest) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.billingRequestCreate(body: BillingRequestWrapper(billingRequests: billingRequest))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? billingRequest }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -56,13 +57,7 @@ public class BillingRequestService {
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
-            .mapError { error in
-                if let apiError = error as? APIError {
-                    return apiError
-                } else {
-                    return APIError.malformedResponseError
-                }
-            }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -80,13 +75,14 @@ public class BillingRequestService {
      - Parameter collectBankAccount Customer bank account details
      */
     public func collectBankAccount(billingRequestId: String,
-                                   collectBankAccount: CollectBankAccount) -> AnyPublisher<BillingRequest, Error> {
+                                   collectBankAccount: CollectBankAccount) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionCollectBankAccount(billingRequestId: billingRequestId,
                                                          body: GenericRequest(data: collectBankAccount))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -98,13 +94,14 @@ public class BillingRequestService {
      - Parameter confirmPayerDetailsRequest Payer details
      */
     public func confirmPayerDetails(billingRequestId: String,
-                                    confirmPayerDetailsRequest: ConfirmPayerDetailsRequest) -> AnyPublisher<BillingRequest, Error> {
+                                    confirmPayerDetailsRequest: ConfirmPayerDetailsRequest) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionConfirmPayerDetails(billingRequestId: billingRequestId,
                                                           body: GenericRequest(data: confirmPayerDetailsRequest))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -115,12 +112,13 @@ public class BillingRequestService {
      - Parameter billingRequestId The Billing Request to be fulfilled.
      - Parameter metaData Key-value store of custom data. Up to 3 keys are permitted, with key names up to 50 characters and values up to 500 characters.
      */
-    public func fulfil(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
+    public func fulfil(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionFulfil(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -130,12 +128,13 @@ public class BillingRequestService {
      - Parameter billingRequestId The Billing Request to be cancelled.
      - Parameter metaData Key-value store of custom data. Up to 3 keys are permitted, with key names up to 50 characters and values up to 500 characters.
      */
-    public func cancel(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
+    public func cancel(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionCancel(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -148,12 +147,13 @@ public class BillingRequestService {
      - Parameter billingRequestId The Billing Request to be notified.
      - Parameter notifyActionRequest Notification body.
      */
-    public func notify(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, Error> {
+    public func notify(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.actionNotify(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
@@ -162,23 +162,25 @@ public class BillingRequestService {
      
      - Parameter billingRequestId: The Billing Request Id to request the details
      */
-    public func getBillingRequest(billingRequestId: String) -> AnyPublisher<BillingRequest, Error> {
+    public func getBillingRequest(billingRequestId: String) -> AnyPublisher<BillingRequest, APIError> {
         let endpoint = Endpoint.billingRequestGet(billingRequestId: billingRequestId)
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
     
     /**
      Returns a cursor-paginated list of your billing requests.
      */
-    public func listBillingRequests() -> AnyPublisher<BillingRequestList, Error> {
+    public func listBillingRequests() -> AnyPublisher<BillingRequestList, APIError> {
         let endpoint = Endpoint.billingRequestList
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestList.self, decoder: JSONDecoder())
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
 }

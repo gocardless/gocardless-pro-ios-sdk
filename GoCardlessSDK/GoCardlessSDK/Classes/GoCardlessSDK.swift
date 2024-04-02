@@ -45,7 +45,9 @@ public class GoCardlessSDK: NSObject {
             HttpHeaderProvider(accessToken: accessToken)
         }
         container.single(HttpClient.self) { _, _  in
-            HttpClient(httpHeaderProvider: self.container.resolve(), envrionment: environment)
+            HttpClient(httpHeaderProvider: self.container.resolve(),
+                       envrionment: environment,
+                       errorMapper: self.container.resolve())
         }
         container.single(CustomerService.self) { _, _  in
             CustomerService(httpClient: self.container.resolve())
@@ -55,6 +57,9 @@ public class GoCardlessSDK: NSObject {
         }
         container.single(BillingRequestFlowService.self) { _, _  in
             BillingRequestFlowService(httpClient: self.container.resolve())
+        }
+        container.single(ErrorMapper.self) { _, _  in
+            ErrorMapper()
         }
     }
 }

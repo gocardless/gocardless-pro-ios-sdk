@@ -9,6 +9,7 @@ class BillingRequestFlowTests: XCTestCase {
     private var billingRequestFlowService: BillingRequestFlowService!
     private var cancellables: Set<AnyCancellable>!
     private var endpoint = Endpoint.billingRequestFlowCreate(body: BillingRequestFlowWrapper(billingRequestFlows: BillingRequestFlow()))
+    private let errorMapper = ErrorMapper()
 
     override func setUp() {
         super.setUp()
@@ -18,7 +19,8 @@ class BillingRequestFlowTests: XCTestCase {
         let urlSession = URLSession.init(configuration: configuration)
         httpClient = HttpClient(httpHeaderProvider: headerProvider,
                                 envrionment: TestConstants.environment,
-                                urlSession: urlSession)
+                                urlSession: urlSession,
+                                errorMapper: errorMapper)
         billingRequestFlowService = BillingRequestFlowService(httpClient: httpClient)
     }
     

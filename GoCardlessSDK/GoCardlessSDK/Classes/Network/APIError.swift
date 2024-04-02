@@ -5,6 +5,7 @@
 //  Created by Gunhan Sancar on 25/01/2024.
 //
 
+import Combine
 
 /// Represents different API errors that can occur during network requests.
 public enum APIError: Error {
@@ -24,4 +25,16 @@ public enum APIError: Error {
     case validationFailedError
     /// Represents an error that occurs when a response is returned from the API which isn't valid JSON (for example, an HTML error page returned from a load balancer)
     case malformedResponseError
+}
+
+extension Publisher {
+    func mapAPIError() -> Publishers.MapError<Self, APIError> {
+        return self.mapError { error in
+            if let apiError = error as? APIError {
+                return apiError
+            } else {
+                return APIError.malformedResponseError
+            }
+        }
+    }
 }

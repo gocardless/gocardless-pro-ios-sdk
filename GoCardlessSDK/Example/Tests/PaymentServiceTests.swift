@@ -16,6 +16,7 @@ class PaymentServiceTests: XCTestCase {
     private var httpClient: HttpClient!
     private var service: PaymentService!
     private var cancellables: Set<AnyCancellable>!
+    private let errorMapper = ErrorMapper()
     
     override func setUp() {
         super.setUp()
@@ -25,7 +26,8 @@ class PaymentServiceTests: XCTestCase {
         let urlSession = URLSession.init(configuration: configuration)
         httpClient = HttpClient(httpHeaderProvider: headerProvider,
                                 envrionment: TestConstants.environment,
-                                urlSession: urlSession)
+                                urlSession: urlSession,
+                                errorMapper: errorMapper)
         service = PaymentService(httpClient: httpClient)
     }
     

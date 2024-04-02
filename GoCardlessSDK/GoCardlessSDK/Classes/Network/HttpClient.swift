@@ -12,16 +12,19 @@ class HttpClient {
     private let httpHeaderProvider: HttpHeaderProvider
     private let envrionment: Environment
     private let urlSession: URLSession
+    private let errorMapper: ErrorMapper
     
     init(httpHeaderProvider: HttpHeaderProvider,
          envrionment: Environment,
-         urlSession: URLSession = URLSession.shared) {
+         urlSession: URLSession = URLSession.shared,
+         errorMapper: ErrorMapper) {
         self.httpHeaderProvider = httpHeaderProvider
         self.envrionment = envrionment
         self.urlSession = urlSession
+        self.errorMapper = errorMapper
     }
     
-    func request(endpoint: Endpoint) -> AnyPublisher<Data, APIError> {
+    func request(endpoint: Endpoint) -> AnyPublisher<Data, Error> {
         var request = URLRequest(environemnt: envrionment, endpoint: endpoint)
             .setHeaders(provider: httpHeaderProvider)
         
@@ -31,40 +34,11 @@ class HttpClient {
         }
         
         return urlSession.dataTaskPublisher(for: request)
-            .tryMap { data, response in
+            .tryMap { [weak self] data, response in
                 let httpResponse = response as? HTTPURLResponse
                 let code = httpResponse?.statusCode ?? -999
-                
-                guard (200...299).contains(code) else {
-                    switch code {
-                    case 401: throw APIError.authenticationError
-                    case 403: throw APIError.permissionError
-                    case 429: throw APIError.rateLimitError
-                    default: break
-                    }
-                    
-                    let decoder = JSONDecoder()
-                    let errorBody = try decoder.decode(ErrorWrapper.self, from: data)
-                    
-                    guard let errorType = errorBody.errorDetail?.type else {
-                        throw APIError.goCardlessInternalError
-                    }
-                    
-                    switch errorType {
-                    case ErrorType.gocardless: throw APIError.goCardlessInternalError
-                    case ErrorType.invalidAPIUsage: throw APIError.invalidApiUsageError
-                    case ErrorType.invalidState: throw APIError.invalidStateError
-                    case ErrorType.validationFailed: throw APIError.validationFailedError
-                    }
-                }
+                try self?.errorMapper.process(code: code, data: data)
                 return data
-            }
-            .mapError { error in
-                if let apiError = error as? APIError {
-                    return apiError
-                } else {
-                    return APIError.malformedResponseError
-                }
             }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()

@@ -30,6 +30,7 @@ public class CustomerService {
         let endpoint = Endpoint.customerRemove(customerId: customerId)
         
         return httpClient.request(endpoint: endpoint)
+            .mapAPIError()
             .eraseToAnyPublisher()
     }
 }
