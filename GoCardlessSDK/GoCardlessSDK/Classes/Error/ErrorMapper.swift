@@ -22,22 +22,24 @@ class ErrorMapper {
             default: break
             }
             
+            var errorBody: ErrorWrapper? = nil
+            
             do {
                 let decoder = JSONDecoder()
-                let errorBody = try decoder.decode(ErrorWrapper.self, from: data)
-                
-                guard let errorType = errorBody.errorDetail?.type else {
-                    throw APIError.goCardlessInternalError
-                }
-                
-                switch errorType {
-                case ErrorType.gocardless: throw APIError.goCardlessInternalError
-                case ErrorType.invalidAPIUsage: throw APIError.invalidApiUsageError
-                case ErrorType.invalidState: throw APIError.invalidStateError
-                case ErrorType.validationFailed: throw APIError.validationFailedError
-                }
+                errorBody = try decoder.decode(ErrorWrapper.self, from: data)
             } catch {
                 throw APIError.malformedResponseError
+            }
+            
+            guard let errorType = errorBody?.errorDetail?.type else {
+                throw APIError.goCardlessInternalError
+            }
+            
+            switch errorType {
+            case ErrorType.gocardless: throw APIError.goCardlessInternalError
+            case ErrorType.invalidAPIUsage: throw APIError.invalidApiUsageError
+            case ErrorType.invalidState: throw APIError.invalidStateError
+            case ErrorType.validationFailed: throw APIError.validationFailedError
             }
         }
     }
