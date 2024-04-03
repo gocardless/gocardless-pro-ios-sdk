@@ -21,7 +21,7 @@ pod 'GoCardlessSDK'
 
 ## Author
 
-Gunhan Sancar
+GoCardless
 
 ## License
 

@@ -28,6 +28,21 @@ class MainViewModel: ObservableObject {
     func fetchCustomers() {
         state = .loading
         print("Fetch customers")
+        
+        GoCardlessSDK.shared.billingRequestService.listBillingRequests()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("API error: \(error)")
+                    self.state = .error
+                case .finished: break
+                }
+            }) { billingRequestList in
+                //self.state = .success(billingRequest: billingRequest)
+            }
+            .store(in: &subscriptions)
+        
         customerService.all()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
