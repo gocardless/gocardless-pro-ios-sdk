@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/gocardless/gocardless-pro-ios-sdk'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'GoCardlessSDK/LICENSE' }
   s.author           = { 'GoCardless' => 'mobile-sdk-ext@gocardless.com' }
   s.source           = { :git => 'https://github.com/gocardless/gocardless-pro-ios-sdk.git', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.3'
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'GoCardlessSDK/GoCardlessSDK/Classes/**/*'
   
 end
