@@ -14,10 +14,10 @@ Pod::Spec.new do |s|
   The GoCardless iOS SDK is a tool that enables developers to integrate GoCardless payments into their iOS applications. To help developers get started, a sample app has been created that demonstrates how to use the SDK. The app provides a clear and practical example of how to implement GoCardless payments within an iOS app.
                        DESC
 
-  s.homepage         = 'https://github.com/gocardless/gocardless-pro-android-sdk'
+  s.homepage         = 'https://github.com/gocardless/gocardless-pro-ios-sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'GoCardless' => 'mobile-sdk@gocardless.com' }
-  s.source           = { :git => 'https://github.com/gocardless/gocardless-pro-android-sdk.git', :tag => s.version.to_s }
+  s.author           = { 'GoCardless' => 'mobile-sdk-ext@gocardless.com' }
+  s.source           = { :git => 'https://github.com/gocardless/gocardless-pro-ios-sdk.git', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.3'
   s.source_files = 'GoCardlessSDK/Classes/**/*'
