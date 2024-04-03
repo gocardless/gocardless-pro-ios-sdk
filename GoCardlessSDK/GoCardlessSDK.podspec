@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/gocardless/gocardless-pro-ios-sdk.git', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.3'
-  s.source_files = 'GoCardlessSDK/Classes/**/*'
+  s.source_files = 'Classes/**/*'
   
 end
