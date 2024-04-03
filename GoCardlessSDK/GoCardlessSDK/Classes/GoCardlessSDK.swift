@@ -18,6 +18,7 @@ public class GoCardlessSDK: NSObject {
     public private(set) lazy var billingRequestService: BillingRequestService = container.resolve()
     public private(set) lazy var billingRequestFlowService: BillingRequestFlowService = container.resolve()
     public private(set) lazy var paymentService: PaymentService = container.resolve()
+
     
     /// Initialise the GoCardless SDK
     ///

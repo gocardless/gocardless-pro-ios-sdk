@@ -43,7 +43,6 @@ class MainViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
         
-        
         customerService.all()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
