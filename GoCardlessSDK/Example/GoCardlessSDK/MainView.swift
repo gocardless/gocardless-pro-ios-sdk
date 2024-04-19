@@ -17,23 +17,32 @@ struct MainView: View {
             VStack {
                 switch viewModel.state {
                 case .idle:
-                    Text("Initial")
+                    Text("")
                 case .loading:
                     Text("Loading...")
-                case .success(let customers):
-                    CustomerListView(customers: customers, onDelete: {
-                        customer in
-                        viewModel.deleteCustomer(customer: customer)
-                    }, onRefresh: {
-                        viewModel.fetchCustomers()
-                    })
+                case .success:
+                    Text("Launching")
                 case .error:
                     Text("Oops... Something went wrong")
                 }
-            }
-            .onAppear {
-                //viewModel.fetchCustomers()
+                
+                Button("Create Single Payment") {
+                    viewModel.createSinglePayment()
+                }
+                
+                Spacer()
+                
+                Button("Create DD Mandate") {
+                    viewModel.createMandate()
+                }
+                
+                Spacer()
+                
+                Button("Create VRP Mandate") {
+                    viewModel.createVRPMandate()
+                }
             }
         }
     }
 }
+

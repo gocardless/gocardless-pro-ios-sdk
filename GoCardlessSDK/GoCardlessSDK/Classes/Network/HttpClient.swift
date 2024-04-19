@@ -32,12 +32,14 @@ class HttpClient {
             let encoded = try? JSONEncoder().encode(body)
             request.httpBody = encoded
         }
+        print(request)
         
         return urlSession.dataTaskPublisher(for: request)
             .tryMap { [weak self] data, response in
                 let httpResponse = response as? HTTPURLResponse
                 let code = httpResponse?.statusCode ?? -999
                 try self?.errorMapper.process(code: code, data: data)
+                print(data)
                 return data
             }
             .receive(on: DispatchQueue.main)
