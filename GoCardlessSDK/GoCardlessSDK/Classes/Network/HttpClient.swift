@@ -32,7 +32,6 @@ class HttpClient {
             let encoded = try? JSONEncoder().encode(body)
             request.httpBody = encoded
         }
-        print(request)
         
         return urlSession.dataTaskPublisher(for: request)
             .tryMap { [weak self] data, response in
