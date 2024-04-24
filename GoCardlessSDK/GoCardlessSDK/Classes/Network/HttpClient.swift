@@ -38,7 +38,6 @@ class HttpClient {
                 let httpResponse = response as? HTTPURLResponse
                 let code = httpResponse?.statusCode ?? -999
                 try self?.errorMapper.process(code: code, data: data)
-                print(data)
                 return data
             }
             .receive(on: DispatchQueue.main)
