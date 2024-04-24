@@ -22,10 +22,12 @@ public class BillingRequestFlowService {
     public func createBillingRequestFlow(billingRequestFlow: BillingRequestFlow) -> AnyPublisher<BillingRequestFlow, APIError> {
         let endpoint = Endpoint.billingRequestFlowCreate(body: BillingRequestFlowWrapper(billingRequestFlows: billingRequestFlow))
         
-        return httpClient.request(endpoint: endpoint)
+        let response = httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestFlowWrapper.self, decoder: JSONDecoder())
             .map { $0.billingRequestFlows ??  billingRequestFlow }
             .mapAPIError()
             .eraseToAnyPublisher()
+
+        return response
     }
 }

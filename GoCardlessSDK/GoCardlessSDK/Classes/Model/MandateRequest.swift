@@ -6,7 +6,7 @@
 
 public struct MandateRequest: Codable {
     public let currency: String?
-    public let constraints: String?
+    public let constraints: MandateConstraints?
     public let scheme: String?
     public let sweeping: Bool?
     public let verify: String?
@@ -27,15 +27,15 @@ public struct MandateRequest: Codable {
         case payerRequestedDualSignature = "payer_requested_dual_signature"
     }
 
-    public init(currency: String?, 
-                constraints: String?,
-                scheme: String?,
-                sweeping: Bool?,
-                verify: String?,
-                links: Links?,
-                metadata: Metadata?,
-                description: String?,
-                payerRequestedDualSignature: Bool?) {
+    public init(currency: String? = nil,
+                constraints: MandateConstraints? = nil,
+                scheme: String? = nil,
+                sweeping: Bool? = nil,
+                verify: String? = nil,
+                links: Links? = nil,
+                metadata: Metadata? = nil,
+                description: String? = nil,
+                payerRequestedDualSignature: Bool? = nil) {
         self.currency = currency
         self.constraints = constraints
         self.scheme = scheme

@@ -14,7 +14,6 @@ public class GoCardlessSDK: NSObject {
     private var container: DependencyContainer = DependencyContainer()
     private var initialised: Bool = false
     
-    public private(set) lazy var customerService: CustomerService = container.resolve()
     public private(set) lazy var billingRequestService: BillingRequestService = container.resolve()
     public private(set) lazy var billingRequestFlowService: BillingRequestFlowService = container.resolve()
     public private(set) lazy var paymentService: PaymentService = container.resolve()
@@ -50,9 +49,6 @@ public class GoCardlessSDK: NSObject {
             HttpClient(httpHeaderProvider: self.container.resolve(),
                        envrionment: environment,
                        errorMapper: self.container.resolve())
-        }
-        container.single(CustomerService.self) { _, _  in
-            CustomerService(httpClient: self.container.resolve())
         }
         container.single(BillingRequestService.self) { _, _  in
             BillingRequestService(httpClient: self.container.resolve())

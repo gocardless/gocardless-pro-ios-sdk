@@ -14,22 +14,64 @@ enum MainViewState {
     case idle
     case loading
     case error
-    case success(customers: Customers)
+    case success(url: String)
 }
 
 @MainActor
 class MainViewModel: ObservableObject {
     @Published var state: MainViewState = .idle
     
-    let customerService = GoCardlessSDK.shared.customerService
     var subscriptions = Set<AnyCancellable>()
     
-    @MainActor
-    func fetchCustomers() {
+    func createSinglePayment() {
         state = .loading
-        print("Fetch customers")
+        print("Create IBP Payment")
         
-        GoCardlessSDK.shared.billingRequestService.listBillingRequests()
+        let br = BillingRequest.init(
+            paymentRequest : PaymentRequest.init(description: "Test", currency: "GBP", amount: 100)
+        )
+        createBR(br: br)
+    }
+    
+    func createMandate() {
+        state = .loading
+        print("Create Mandate")
+        
+        let br = BillingRequest.init(
+            mandateRequest : MandateRequest.init(currency: "GBP", description: "Test")
+        )
+        createBR(br: br)
+    }
+    
+    func createVRPMandate() {
+        state = .loading
+        print("Create Mandate")
+        
+        let br = BillingRequest.init(
+            mandateRequest : MandateRequest.init(
+                currency: "GBP",
+                constraints : MandateConstraints.init(
+                    periodicLimits : [
+                        PeriodicLimit.init(
+                            period : Period.month,
+                            maxTotalAmount : 100
+                        )
+                    ],
+                    maxAmountPerPayment : 100
+                ),
+                scheme: "faster_payments",
+                sweeping : true,
+                description: "Test"
+            )
+        )
+        createBR(br: br)
+    }
+    
+    private func createBR(br: BillingRequest) {
+        state = .loading
+        print("Create Billing Request")
+        
+        GoCardlessSDK.shared.billingRequestService.createBillingRequest(billingRequest: br)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {
@@ -38,47 +80,35 @@ class MainViewModel: ObservableObject {
                     self.state = .error
                 case .finished: break
                 }
-            }) { billingRequestList in
-                //self.state = .success(billingRequest: billingRequest)
+            }) { billingRequest in
+                self.createBRF(brId: billingRequest.id!)
             }
             .store(in: &subscriptions)
-        
-        customerService.all()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { (completion) in
-                    switch completion {
-                    case let .failure(error):
-                        print("Couldn't get users: \(error)")
-                        self.state = .error
-                    case .finished: break
-                    }
-                }) { customers in
-                    self.state = .success(customers: customers)
-                }
-                .store(in: &subscriptions)
     }
     
-    @MainActor
-    func deleteCustomer(customer: Customer) {
-        state = .loading
+    private func createBRF(brId: String) {
+        print("Create Billing Request Flow")
         
-        let allCustomers = customerService.all()
+        let brf = BillingRequestFlow.init(
+            links: Links.init(billingRequest: brId)
+        )
         
-//        customerService.delete(customerId: customer.id ?? "")
-//            .receive(on: DispatchQueue.main)
-//            .flatMap({ _ in
-//                allCustomers
-//            })
-//            .sink(receiveCompletion: { (completion) in
-//                    switch completion {
-//                    case let .failure(error):
-//                        print("Couldn't get users: \(error)")
-//                        self.state = .error
-//                    case .finished: break
-//                    }
-//                }) { customers in
-//                    self.state = .success(customers: customers)
-//                }
-//                .store(in: &subscriptions)
+        GoCardlessSDK.shared.billingRequestFlowService.createBillingRequestFlow(
+            billingRequestFlow: brf)
+        .receive(on: DispatchQueue.main)
+        .sink(receiveCompletion: { (completion2) in
+            switch completion2 {
+            case let .failure(error):
+                print("API error: \(error)")
+                self.state = .error
+            case .finished:
+                break
+            }
+        }) { billingRequestFlow in
+            self.state = .success(url: billingRequestFlow.authorisationURL!)
+            UIApplication.shared.open(URL(string: billingRequestFlow.authorisationURL!)!)
+        }
+        .store(in: &subscriptions)
+        
     }
 }

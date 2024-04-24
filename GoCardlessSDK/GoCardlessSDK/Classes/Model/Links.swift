@@ -23,13 +23,13 @@ public struct Links: Codable {
         case billingRequest = "billing_request"
     }
 
-    public init(customer: String?, 
-                customerBillingDetail: String?,
-                creditor: String?,
-                organisation: String?,
-                paymentRequest: String?,
-                mandateRequest: String?,
-                billingRequest: String?) {
+    public init(customer: String? = nil,
+                customerBillingDetail: String? = nil,
+                creditor: String? = nil,
+                organisation: String? = nil,
+                paymentRequest: String? = nil,
+                mandateRequest: String? = nil,
+                billingRequest: String? = nil) {
         self.customer = customer
         self.customerBillingDetail = customerBillingDetail
         self.creditor = creditor

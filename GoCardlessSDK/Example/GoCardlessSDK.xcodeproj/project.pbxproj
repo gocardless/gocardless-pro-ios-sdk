@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* BillingRequestServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */; };
+		60C54BBB2BD2C7B300F3A2B1 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54BBA2BD2C7B300F3A2B1 /* Views.swift */; };
 		BB7E4AED3D51B8CAFC75D27D /* Pods_GoCardlessSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8507F839835DB76BB56CC /* Pods_GoCardlessSDK_Example.framework */; };
 		C64FFA0E2B9FC31700CCD674 /* billing_request_direct_debit_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0D2B9FC31700CCD674 /* billing_request_direct_debit_only.json */; };
 		C64FFA112B9FCCF400CCD674 /* billing_request_payment_only.json in Resources */ = {isa = PBXBuildFile; fileRef = C64FFA0F2B9FCCF400CCD674 /* billing_request_payment_only.json */; };
@@ -30,7 +31,6 @@
 		C68EDC742B96B6FA00C7D3AF /* TestFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68EDC732B96B6FA00C7D3AF /* TestFileManager.swift */; };
 		C68EDC752B96B6FA00C7D3AF /* TestFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68EDC732B96B6FA00C7D3AF /* TestFileManager.swift */; };
 		C68EDC782B971D2800C7D3AF /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68EDC762B971D2800C7D3AF /* TestConstants.swift */; };
-		C69120AB2B61D474000A2241 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120AA2B61D474000A2241 /* CustomerListView.swift */; };
 		C69120AF2B61D67A000A2241 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120AE2B61D67A000A2241 /* ExampleApp.swift */; };
 		C69120B22B61D723000A2241 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120B12B61D723000A2241 /* MainView.swift */; };
 		C69120BC2B626235000A2241 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69120BB2B626235000A2241 /* MainViewModel.swift */; };
@@ -67,6 +67,7 @@
 		607FACE51AFB9204008FA782 /* GoCardlessSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCardlessSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestServiceTests.swift; sourceTree = "<group>"; };
+		60C54BBA2BD2C7B300F3A2B1 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		8072F45D48267AE4CEBACFD3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8C23C4B47A35EA2E776F8F25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9EA55D13E1CFC9630FF45C88 /* Pods-GoCardlessSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCardlessSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GoCardlessSDK_Tests/Pods-GoCardlessSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		C68EDC702B96AB3000C7D3AF /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		C68EDC732B96B6FA00C7D3AF /* TestFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFileManager.swift; sourceTree = "<group>"; };
 		C68EDC762B971D2800C7D3AF /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
-		C69120AA2B61D474000A2241 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
 		C69120AE2B61D67A000A2241 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		C69120B12B61D723000A2241 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C69120BB2B626235000A2241 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -265,17 +265,8 @@
 			children = (
 				C6598EF62B63BC6200FF7818 /* CustomerDetail */,
 				C69120B02B61D71A000A2241 /* Main */,
-				C69120AD2B61D48C000A2241 /* CustomerList */,
 			);
 			name = Features;
-			sourceTree = "<group>";
-		};
-		C69120AD2B61D48C000A2241 /* CustomerList */ = {
-			isa = PBXGroup;
-			children = (
-				C69120AA2B61D474000A2241 /* CustomerListView.swift */,
-			);
-			name = CustomerList;
 			sourceTree = "<group>";
 		};
 		C69120B02B61D71A000A2241 /* Main */ = {
@@ -283,6 +274,7 @@
 			children = (
 				C69120B12B61D723000A2241 /* MainView.swift */,
 				C69120BB2B626235000A2241 /* MainViewModel.swift */,
+				60C54BBA2BD2C7B300F3A2B1 /* Views.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -525,8 +517,8 @@
 				C69120BC2B626235000A2241 /* MainViewModel.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				C69120AF2B61D67A000A2241 /* ExampleApp.swift in Sources */,
+				60C54BBB2BD2C7B300F3A2B1 /* Views.swift in Sources */,
 				C69120B22B61D723000A2241 /* MainView.swift in Sources */,
-				C69120AB2B61D474000A2241 /* CustomerListView.swift in Sources */,
 				C6598EF82B63BC7600FF7818 /* CustomerDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

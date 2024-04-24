@@ -33,18 +33,18 @@ public struct PaymentRequest: Codable {
         case flexibleAmount = "flexible_amount"
     }
 
-    public init(description: String?, 
-                currency: String?,
-                amount: Int?,
-                minAmount: String?,
-                maxAmount: String?,
-                defaultMinAmount: String?,
-                defaultMaxAmount: String?,
-                appFee: String?,
-                scheme: String?,
-                links: Links?,
-                metadata: Metadata?,
-                flexibleAmount: Bool?) {
+    public init(description: String? = nil,
+                currency: String? = nil,
+                amount: Int? = nil,
+                minAmount: String? = nil,
+                maxAmount: String? = nil,
+                defaultMinAmount: String? = nil,
+                defaultMaxAmount: String? = nil,
+                appFee: String? = nil,
+                scheme: String? = nil,
+                links: Links? = nil,
+                metadata: Metadata? = nil,
+                flexibleAmount: Bool? = nil) {
         self.description = description
         self.currency = currency
         self.amount = amount
