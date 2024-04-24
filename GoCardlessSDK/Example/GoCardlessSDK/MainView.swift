@@ -41,6 +41,12 @@ struct MainView: View {
                 Button("Create VRP Mandate") {
                     viewModel.createVRPMandate()
                 }
+                
+                Spacer()
+                
+                Button("Create Test Payment (no UI)") {
+                    viewModel.createCustomPagePayment()
+                }
             }
         }
     }

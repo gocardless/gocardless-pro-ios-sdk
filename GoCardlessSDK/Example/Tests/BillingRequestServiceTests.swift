@@ -148,7 +148,7 @@ class BillingRequestTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
         
         // Then
-        expect(result).to(matchError(APIError.invalidApiUsageError))
+        expect(result).to(matchError(APIError.init(type: APIErrorType.invalidApiUsageError)))
     }
     
     func test_billing_request_action_collect_bank_account() {

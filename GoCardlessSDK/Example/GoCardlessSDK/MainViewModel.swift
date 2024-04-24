@@ -67,6 +67,91 @@ class MainViewModel: ObservableObject {
         createBR(br: br)
     }
     
+    func createCustomPagePayment() {
+        state = .loading
+        print("Create Custom Page Payment")
+        
+        let br = BillingRequest.init(
+            paymentRequest : PaymentRequest.init(description: "Test", currency: "GBP", amount: 100)
+        )
+        
+        GoCardlessSDK.shared.billingRequestService.createBillingRequest(billingRequest: br)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("API error: \(error)")
+                    self.state = .error
+                case .finished: break
+                }
+            }) { billingRequest in
+                self.collectCustomerDetails(br: billingRequest)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func collectCustomerDetails(br: BillingRequest) {
+        GoCardlessSDK.shared.billingRequestService.collectCustomerDetails(
+            billingRequestId: br.id!,
+            collectCustomerDetails: CollectCustomerDetailsRequest.init(
+                customer : Customer.init(
+                    email : "test@gocardless.com",
+                    givenName : "User",
+                    familyName : "Test"
+                )
+            )
+        )
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("API error: \(error)")
+                    self.state = .error
+                case .finished: break
+                }
+            }) { billingRequest in
+                self.selectInstitution(br: billingRequest)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func selectInstitution(br: BillingRequest) {
+        GoCardlessSDK.shared.billingRequestService.selectInstitution(
+            billingRequestId: br.id!,
+            selectInstitution: SelectInstitution.init(
+                countryCode : "GB",
+                institution : "read_refund_account_sandbox_bank"
+            )
+        ) .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("API error: \(error)")
+                    self.state = .error
+                case .finished: break }
+            }) { billingRequest in
+                self.authorise(br: billingRequest)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func authorise(br: BillingRequest) {
+        GoCardlessSDK.shared.billingRequestService.createBankAuthorisation(
+            bankAuthorisation: BankAuthorisation.init(links: Links.init(billingRequest: br.id!))
+        ).receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("API error: \(error)")
+                    self.state = .error
+                case .finished: break }
+            }) { bankAuthorisation in
+                self.state = .success(url: bankAuthorisation.url!)
+                UIApplication.shared.open(URL(string:  bankAuthorisation.url!)!)
+            }
+            .store(in: &subscriptions)
+    }
+    
     private func createBR(br: BillingRequest) {
         state = .loading
         print("Create Billing Request")

@@ -31,17 +31,17 @@ public struct CustomerBillingDetail: Codable {
         case danishIdentityNumber = "danish_identity_number"
     }
 
-    public init(id: String?, 
-                createdAt: String?,
-                addressLine1: String?,
-                addressLine2: String?,
-                addressLine3: String?,
-                city: String?,
-                region: String?,
-                postalCode: String?,
-                countryCode: String?,
-                swedishIdentityNumber: String?,
-                danishIdentityNumber: String?) {
+    public init(id: String? = nil,
+                createdAt: String? = nil,
+                addressLine1: String? = nil,
+                addressLine2: String? = nil,
+                addressLine3: String? = nil,
+                city: String? = nil,
+                region: String? = nil,
+                postalCode: String? = nil,
+                countryCode: String? = nil,
+                swedishIdentityNumber: String? = nil,
+                danishIdentityNumber: String? = nil) {
         self.id = id
         self.createdAt = createdAt
         self.addressLine1 = addressLine1

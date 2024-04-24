@@ -13,7 +13,7 @@ public struct CollectCustomerDetailsRequest: Codable {
         case customerBillingDetail = "customer_billing_detail"
     }
 
-    init(customer: Customer? = nil, customerBillingDetail: CustomerBillingDetail? = nil) {
+    public init(customer: Customer? = nil, customerBillingDetail: CustomerBillingDetail? = nil) {
         self.customer = customer
         self.customerBillingDetail = customerBillingDetail
     }
