@@ -45,24 +45,24 @@ public struct Customer: Codable, Identifiable {
         case metadata = "metadata"
     }
     
-    public init(id: String,
-                createdAt: String,
-                email: String,
-                givenName: String,
-                familyName: String,
-                companyName: String?,
-                addressLine1: String,
-                addressLine2: String?,
-                addressLine3: String?, 
-                city: String,
-                region: String?,
-                postalCode: String,
-                countryCode: String,
-                language: String,
-                swedishIdentityNumber: String?,
-                danishIdentityNumber: String?,
-                phoneNumber: String?,
-                metadata: Metadata?) {
+    public init(id: String? = nil,
+                createdAt: String? = nil,
+                email: String? = nil,
+                givenName: String? = nil,
+                familyName: String? = nil,
+                companyName: String? = nil,
+                addressLine1: String? = nil,
+                addressLine2: String? = nil,
+                addressLine3: String? = nil,
+                city: String? = nil,
+                region: String? = nil,
+                postalCode: String? = nil,
+                countryCode: String? = nil,
+                language: String? = nil,
+                swedishIdentityNumber: String? = nil,
+                danishIdentityNumber: String? = nil,
+                phoneNumber: String? = nil,
+                metadata: Metadata? = nil) {
         self.id = id
         self.createdAt = createdAt
         self.email = email

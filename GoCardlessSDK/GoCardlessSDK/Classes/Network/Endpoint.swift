@@ -9,8 +9,7 @@ import Foundation
 
 /// Represent different API endpoints.
 enum Endpoint {
-    case customerList
-    case customerRemove(customerId: String)
+    case bankAuthorisationCreate(body: BankAuthorisationWrapper)
     case billingRequestCreate(body: BillingRequestWrapper)
     case billingRequestGet(billingRequestId: String)
     case billingRequestList
@@ -18,6 +17,7 @@ enum Endpoint {
     case actionCollectCustomerDetails(billingRequestId: String, body: GenericRequest<CollectCustomerDetailsRequest>)
     case actionCollectBankAccount(billingRequestId: String, body: GenericRequest<CollectBankAccount>)
     case actionConfirmPayerDetails(billingRequestId: String, body: GenericRequest<ConfirmPayerDetailsRequest>)
+    case actionSelectInstitution(billingRequestId: String, body: GenericRequest<SelectInstitution>?)
     case actionFulfil(billingRequestId: String, body: GenericRequest<Metadata>?)
     case actionCancel(billingRequestId: String, body: GenericRequest<Metadata>?)
     case actionNotify(billingRequestId: String, body: GenericRequest<Metadata>?)
@@ -27,10 +27,8 @@ enum Endpoint {
     /// The relative URL path associated with each endpoint.
     var path: String {
         switch self {
-        case .customerList:
-            return "/customers"
-        case .customerRemove(let customerId):
-            return "/customers/\(customerId)"
+        case .bankAuthorisationCreate:
+            return "/bank_authorisations"
         case .billingRequestCreate:
             return "/billing_requests"
         case .billingRequestGet(let billingRequestId):
@@ -51,6 +49,8 @@ enum Endpoint {
             return "/billing_requests/\(billingRequestId)/actions/cancel"
         case .actionNotify(let billingRequestId, _):
             return "/billing_requests/\(billingRequestId)/actions/notify"
+        case .actionSelectInstitution(let billingRequestId, _):
+            return "/billing_requests/\(billingRequestId)/actions/select_institution"
         case .paymentCreate(_):
             return "/payments"
         case .paymentGet(let paymentId):
@@ -61,10 +61,8 @@ enum Endpoint {
     /// The HTTP method associated with each endpoint.
     var method: String {
         switch self {
-        case .customerList, .billingRequestGet, .billingRequestList, .paymentGet:
+        case .billingRequestGet, .billingRequestList, .paymentGet:
             return "GET"
-        case .customerRemove:
-            return "DELETE"
         default:
             return "POST"
         }
@@ -73,11 +71,13 @@ enum Endpoint {
     /// Body of the HTTP request in the `Encodable` format
     var body: Encodable? {
         switch self {
+        case .bankAuthorisationCreate(let body): return body
         case .billingRequestCreate(let body): return body
         case .billingRequestFlowCreate(let body): return body
         case .actionCollectCustomerDetails(_, let body): return body
         case .actionCollectBankAccount(_, let body): return body
         case .actionConfirmPayerDetails(_, let body): return body
+        case .actionSelectInstitution(_, let body): return body
         case .paymentCreate(let body): return body
         default: return nil
         }

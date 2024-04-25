@@ -83,6 +83,6 @@ class BillingRequestFlowTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
         
         // Then
-        expect(result).to(matchError(APIError.invalidApiUsageError))
+        expect(result).to(matchError(APIError.init(type: APIErrorType.invalidApiUsageError)))
     }
 }

@@ -29,7 +29,7 @@ class ErrorMapperTests: XCTestCase {
         
         // Act & Assert
         XCTAssertThrowsError(try errorMapper.process(code: code, data: data)) { error in
-            XCTAssertEqual(error as? APIError, APIError.authenticationError)
+            XCTAssertEqual((error as? APIError)?.type, APIErrorType.authenticationError)
         }
     }
     
@@ -39,7 +39,7 @@ class ErrorMapperTests: XCTestCase {
         
         // Act & Assert
         XCTAssertThrowsError(try errorMapper.process(code: code, data: data)) { error in
-            XCTAssertEqual(error as? APIError, APIError.permissionError)
+            XCTAssertEqual((error as? APIError)?.type, APIErrorType.permissionError)
         }
     }
     
@@ -49,7 +49,7 @@ class ErrorMapperTests: XCTestCase {
         
         // Act & Assert
         XCTAssertThrowsError(try errorMapper.process(code: code, data: data)) { error in
-            XCTAssertEqual(error as? APIError, APIError.rateLimitError)
+            XCTAssertEqual((error as? APIError)?.type, APIErrorType.rateLimitError)
         }
     }
     
@@ -60,7 +60,7 @@ class ErrorMapperTests: XCTestCase {
         
         // Act & Assert
         XCTAssertThrowsError(try errorMapper.process(code: code, data: data!)) { error in
-            XCTAssertEqual(error as? APIError, APIError.malformedResponseError)
+            XCTAssertEqual((error as? APIError)?.type, APIErrorType.malformedResponseError)
         }
     }
 }

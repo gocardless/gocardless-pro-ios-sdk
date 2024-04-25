@@ -106,6 +106,43 @@ public class BillingRequestService {
     }
     
     /**
+     Creates an Institution object and attaches it to the Billing Request
+     
+     - Parameter billingRequestId The Billing Request to set the institution
+     - Parameter selectInstitution Institution Data
+     */
+    public func selectInstitution(billingRequestId: String,
+                                  selectInstitution: SelectInstitution) -> 
+    AnyPublisher<BillingRequest, APIError> {
+        let endpoint = Endpoint.actionSelectInstitution(billingRequestId: billingRequestId,
+                                                          body: GenericRequest(data: selectInstitution))
+        
+        return httpClient.request(endpoint: endpoint)
+            .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
+            .map { $0.billingRequests ?? BillingRequest() }
+            .mapAPIError()
+            .eraseToAnyPublisher()
+    }
+    
+    /**
+     Bank Authorisations can be used to authorise Billing Requests. Authorisations are created against a specific bank, usually the bank that provides the payer’s account.
+
+     Creation of Bank Authorisations is only permitted from GoCardless hosted UIs (see Billing Request Flows) to ensure we meet regulatory requirements for checkout flows.
+     
+     - Parameter bankAuthorisation Bank authorisation data
+     */
+    public func createBankAuthorisation(bankAuthorisation: BankAuthorisation) ->
+    AnyPublisher<BankAuthorisation, APIError> {
+        let endpoint = Endpoint.bankAuthorisationCreate(body: BankAuthorisationWrapper.init(bankAuthorisations: bankAuthorisation))
+        
+        return httpClient.request(endpoint: endpoint)
+            .decode(type: BankAuthorisationWrapper.self, decoder: JSONDecoder())
+            .map { $0.bankAuthorisations ?? BankAuthorisation() }
+            .mapAPIError()
+            .eraseToAnyPublisher()
+    }
+    
+    /**
      If a billing request is ready to be fulfilled, call this endpoint to cause it to fulfil,
      executing the payment.
      

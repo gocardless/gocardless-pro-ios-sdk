@@ -7,8 +7,19 @@
 
 import Combine
 
+public struct APIError: Error {
+    
+    public let type: APIErrorType?
+    public let errorDetail: ErrorDetail?
+    
+    init(type: APIErrorType, errorDetail: ErrorDetail? = nil) {
+        self.type = type
+        self.errorDetail = errorDetail
+    }
+}
+
 /// Represents different API errors that can occur during network requests.
-public enum APIError: Error {
+public enum APIErrorType {
     /// Represents an error that occurs when user credentials/api key provided is invalid.
     case authenticationError
     /// Represents an error that occurs when user is not permitted to do desired action.
@@ -33,7 +44,7 @@ extension Publisher {
             if let apiError = error as? APIError {
                 return apiError
             } else {
-                return APIError.malformedResponseError
+                return APIError.init(type: APIErrorType.malformedResponseError)
             }
         }
     }
