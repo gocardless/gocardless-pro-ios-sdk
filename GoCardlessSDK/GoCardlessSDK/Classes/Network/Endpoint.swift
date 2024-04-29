@@ -20,7 +20,7 @@ enum Endpoint {
     case actionSelectInstitution(billingRequestId: String, body: GenericRequest<SelectInstitution>?)
     case actionFulfil(billingRequestId: String, body: GenericRequest<Metadata>?)
     case actionCancel(billingRequestId: String, body: GenericRequest<Metadata>?)
-    case actionNotify(billingRequestId: String, body: GenericRequest<Metadata>?)
+    case actionNotify(billingRequestId: String, body: GenericRequest<NotifyRequest>?)
     case paymentCreate(payment: PaymentWrapper)
     case paymentGet(paymentId: String)
     
@@ -78,6 +78,7 @@ enum Endpoint {
         case .actionCollectBankAccount(_, let body): return body
         case .actionConfirmPayerDetails(_, let body): return body
         case .actionSelectInstitution(_, let body): return body
+        case .actionNotify(_, let body): return body
         case .paymentCreate(let body): return body
         default: return nil
         }

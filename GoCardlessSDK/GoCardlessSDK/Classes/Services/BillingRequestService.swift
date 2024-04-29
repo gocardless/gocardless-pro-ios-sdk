@@ -182,10 +182,10 @@ public class BillingRequestService {
      This endpoint is currently supported only for Instant Bank Pay Billing Requests.
      
      - Parameter billingRequestId The Billing Request to be notified.
-     - Parameter notifyActionRequest Notification body.
+     - Parameter notifyRequest Notification body.
      */
-    public func notify(billingRequestId: String, metadata: Metadata? = nil) -> AnyPublisher<BillingRequest, APIError> {
-        let endpoint = Endpoint.actionNotify(billingRequestId: billingRequestId, body: GenericRequest(data: metadata))
+    public func notify(billingRequestId: String, notifyRequest: NotifyRequest) -> AnyPublisher<BillingRequest, APIError> {
+        let endpoint = Endpoint.actionNotify(billingRequestId: billingRequestId, body: GenericRequest(data: notifyRequest))
         
         return httpClient.request(endpoint: endpoint)
             .decode(type: BillingRequestWrapper.self, decoder: JSONDecoder())
