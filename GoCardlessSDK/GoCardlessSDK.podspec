@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GoCardlessSDK'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'GoCardless Pro iOS client library'
   s.description      = <<-DESC
   The GoCardless iOS SDK is a tool that enables developers to integrate GoCardless payments into their iOS applications. To help developers get started, a sample app has been created that demonstrates how to use the SDK. The app provides a clear and practical example of how to implement GoCardless payments within an iOS app.
