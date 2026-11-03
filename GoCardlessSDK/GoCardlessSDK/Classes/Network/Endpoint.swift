@@ -32,29 +32,29 @@ enum Endpoint {
         case .billingRequestCreate:
             return "/billing_requests"
         case .billingRequestGet(let billingRequestId):
-            return "/billing_requests/\(billingRequestId)"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))"
         case .billingRequestList:
             return "/billing_requests"
         case .billingRequestFlowCreate:
             return "/billing_request_flows"
         case .actionCollectCustomerDetails(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/collect_customer_details"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/collect_customer_details"
         case .actionCollectBankAccount(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/collect_bank_account"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/collect_bank_account"
         case .actionConfirmPayerDetails(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/confirm_payer_details"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/confirm_payer_details"
         case .actionFulfil(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/fulfil"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/fulfil"
         case .actionCancel(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/cancel"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/cancel"
         case .actionNotify(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/notify"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/notify"
         case .actionSelectInstitution(let billingRequestId, _):
-            return "/billing_requests/\(billingRequestId)/actions/select_institution"
+            return "/billing_requests/\(Endpoint.escapePathParam(billingRequestId))/actions/select_institution"
         case .paymentCreate(_):
             return "/payments"
         case .paymentGet(let paymentId):
-            return "/payments/\(paymentId)"
+            return "/payments/\(Endpoint.escapePathParam(paymentId))"
         }
     }
     
@@ -83,11 +83,38 @@ enum Endpoint {
         default: return nil
         }
     }
+
+    /// Percent-encodes a path parameter so a caller-supplied identifier
+    /// cannot alter the request path. Path separators ("/"), dot-segments
+    /// ("." / "..") and query/fragment markers ("?" / "#") are escaped.
+    /// Control characters are rejected before URL creation.
+    static func escapePathParam(_ value: String) -> String {
+        let allowed = CharacterSet(charactersIn:
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_~")
+        return value.addingPercentEncoding(withAllowedCharacters: allowed) ?? ""
+    }
+
+    var hasControlCharacterInPathParam: Bool {
+        switch self {
+        case .billingRequestGet(let value),
+             .actionCollectCustomerDetails(let value, _),
+             .actionCollectBankAccount(let value, _),
+             .actionConfirmPayerDetails(let value, _),
+             .actionSelectInstitution(let value, _),
+             .actionFulfil(let value, _),
+             .actionCancel(let value, _),
+             .actionNotify(let value, _),
+             .paymentGet(let value):
+            return value.unicodeScalars.contains { CharacterSet.controlCharacters.contains($0) }
+        default:
+            return false
+        }
+    }
 }
 
 extension Endpoint {
     func url(environment: Environment) -> URL? {
-        URLRequest(environemnt: environment, endpoint: self).url
+        URLRequest(environemnt: environment, endpoint: self)?.url
     }
 }
 
@@ -95,9 +122,15 @@ extension Endpoint {
 ///
 /// - Parameter endpoint: The `Endpoint` to use for the request.
 extension URLRequest {
-    init(environemnt: Environment, endpoint: Endpoint) {
-        let url = "\(environemnt.baseUrl)\(endpoint.path)"
-        self.init(url: URL(string: url)!)
+    init?(environemnt: Environment, endpoint: Endpoint) {
+        guard !endpoint.hasControlCharacterInPathParam else {
+            return nil
+        }
+        let urlString = "\(environemnt.baseUrl)\(endpoint.path)"
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        self.init(url: url)
         self.httpMethod = endpoint.method
     }
 }
