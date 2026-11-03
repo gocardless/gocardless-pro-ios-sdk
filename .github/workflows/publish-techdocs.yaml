@@ -8,7 +8,7 @@ on:
       - docs/**
 jobs:
   publish_techdocs:
-    name: Publish Techdocs (${{matrix.n.}})
+    name: Publish Techdocs (${{matrix.n.env}})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
