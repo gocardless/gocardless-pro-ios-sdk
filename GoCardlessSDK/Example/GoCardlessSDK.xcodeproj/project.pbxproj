@@ -37,6 +37,7 @@
 		C6ED73F22BBAB11900240DDA /* PaymentServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73F12BBAB11900240DDA /* PaymentServiceTests.swift */; };
 		C6ED73F42BBAB21F00240DDA /* payment_success.json in Resources */ = {isa = PBXBuildFile; fileRef = C6ED73F32BBAB21F00240DDA /* payment_success.json */; };
 		C6ED73F92BBBE59F00240DDA /* ErrorMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED73F82BBBE59F00240DDA /* ErrorMapperTests.swift */; };
+		A11CE0000000000000000001 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CE0000000000000000002 /* EndpointTests.swift */; };
 		C6F178DE2BAA225C00817E7B /* collect_bank_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178DD2BAA045400817E7B /* collect_bank_account.json */; };
 		C6F178E02BAA2C1F00817E7B /* collect_customer_details.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178DF2BAA2C1F00817E7B /* collect_customer_details.json */; };
 		C6F178E22BAA958E00817E7B /* action_fulfil.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F178E12BAA958E00817E7B /* action_fulfil.json */; };
@@ -67,6 +68,7 @@
 		607FACE51AFB9204008FA782 /* GoCardlessSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCardlessSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingRequestServiceTests.swift; sourceTree = "<group>"; };
+		A11CE0000000000000000002 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		60C54BBA2BD2C7B300F3A2B1 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		8072F45D48267AE4CEBACFD3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8C23C4B47A35EA2E776F8F25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				607FACEB1AFB9204008FA782 /* BillingRequestServiceTests.swift */,
 				C64FFA1F2B9FD24F00CCD674 /* BillingRequestFlowServiceTests.swift */,
 				C6ED73F12BBAB11900240DDA /* PaymentServiceTests.swift */,
+				A11CE0000000000000000002 /* EndpointTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				C68EDC722B96AB3000C7D3AF /* URLProtocolStub.swift in Sources */,
 				C6ED73F22BBAB11900240DDA /* PaymentServiceTests.swift in Sources */,
 				C68EDC782B971D2800C7D3AF /* TestConstants.swift in Sources */,
+				A11CE0000000000000000001 /* EndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

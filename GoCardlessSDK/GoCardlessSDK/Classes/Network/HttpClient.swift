@@ -25,8 +25,11 @@ class HttpClient {
     }
     
     func request(endpoint: Endpoint) -> AnyPublisher<Data, Error> {
-        var request = URLRequest(environemnt: envrionment, endpoint: endpoint)
-            .setHeaders(provider: httpHeaderProvider)
+        guard var request = URLRequest(environemnt: envrionment, endpoint: endpoint)?
+            .setHeaders(provider: httpHeaderProvider) else {
+            return Fail(error: APIError(type: .invalidApiUsageError))
+                .eraseToAnyPublisher()
+        }
         
         if let body = endpoint.body {
             let encoded = try? JSONEncoder().encode(body)
